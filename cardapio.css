@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/* main{
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-column-start: 2;
+} */
+
+main{
+    display: flex;
+    justify-content: center;
+    width: full;
+}
+.cardapio_geral{
+    display: flex;
+}
+main h3{
+    font-size: 25px;
+}
+main h6{
+    font-family: 'Light';
+    font-size: 20px;
+}
+main h4{
+    font-family: 'Poppins';
+    font-size: 15px;
+}
