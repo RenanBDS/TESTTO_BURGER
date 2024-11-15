@@ -2,28 +2,74 @@
     margin: 0;
     padding: 0;
 }
-/* main{
-    display: grid;
-    grid-template-columns: 10% 80% 10%;
-    grid-column-start: 2;
-} */
 
 main{
     display: flex;
     justify-content: center;
     width: full;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.cardapio_geral{
+.logo_preta{
+    padding-top: 20px;
+    z-index: 10;
+}
+.cardapi_geral{
+    z-index: 1;
+}
+.testto_clasic{
     display: flex;
+    justify-content: center;
+}
+.testto_frango{
+    display: flex;
+    justify-content: center;
+}
+.duplo_anabolic{
+    display: flex;
+    justify-content: center;
+}
+.testto_bacon{
+    display: flex;
+    justify-content: center;
+}
+.batata_bacon{
+    display: flex;
+    justify-content: center;
+}
+.suco_natural{
+    display: flex;
+    justify-content: center;
+}
+.linhas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 main h3{
     font-size: 25px;
+    margin-bottom: 10px;
 }
 main h6{
     font-family: 'Light';
-    font-size: 20px;
+    font-size: 16px;
 }
 main h4{
     font-family: 'Poppins';
-    font-size: 15px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+button{
+    padding: 5px;
+    border: solid 1px #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-top: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+.carrinho{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
 }
