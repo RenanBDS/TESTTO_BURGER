@@ -7,6 +7,7 @@ main{
     justify-content: center;
 }
 .botao_finalizado{
+    margin-top: 100px;
     background-color: #FF0000;
     width: 260px;
     height: 90px;
@@ -24,11 +25,18 @@ main{
     /*font-family: Montserrat; NÃO TEM*/
 }
 .acompanhar_pedido{
-    padding-left: 100px;
-    padding-top: 50px;
+    width: 130px;
+    border-radius: 50px;
+    margin-left: 100px;
+    margin-top: 50px;
+    box-shadow: 10px 10px 10px 0px;
 }
 .letras_acompanhe{
-    border-radius: 10px;
+    border-radius: 50px;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
     background-color: #FF0000;
-    
+    color: #DDE6ED;
+    border: none;
 }
