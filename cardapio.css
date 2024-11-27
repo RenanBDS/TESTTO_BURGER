@@ -1,0 +1,191 @@
+/*Início do Geral*/
+*{
+    margin: 0;
+    padding: 0;
+}
+header{
+    position: relative;
+    z-index: 10;
+}
+main{
+    position: relative;
+    z-index: 20;
+}
+footer{
+    position: relative;
+    z-index: 1;
+}
+/*Fim do Geral*/
+/*Início do Header*/
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background: #f0000f;
+}
+.dropbtn {
+    background-color: #f0000f;
+    color: white;
+    font-size: 40px;
+    border: none;
+    max-height: 40px;
+    margin-left: 10px;
+}
+.dropdown {
+    height: 60px;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f0000f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 20;
+    order: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+} 
+.dropdown-content a:hover {background-color: #ddd;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: #f0000f;}
+.menu-pesquisa {
+    display: flex;
+    gap: 10px;
+}
+/*Fim do Header*/
+/*Início do Main*/
+main{
+    display: flex;
+    justify-content: center;
+    width: full;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.logo_preta{
+    display: flex;
+    position: absolute;
+    padding-left: 10px;
+    order: 2;
+    z-index: 10;
+}
+.cardapi_geral{
+    display: flex;
+    position: absolute;
+    z-index: 1;
+}
+.testto_clasic{
+    display: flex;
+    justify-content: center;
+}
+.testto_frango{
+    display: flex;
+    justify-content: center;
+}
+.duplo_anabolic{
+    display: flex;
+    justify-content: center;
+}
+.testto_bacon{
+    display: flex;
+    justify-content: center;
+}
+.batata_bacon{
+    display: flex;
+    justify-content: center;
+}
+.suco_natural{
+    display: flex;
+    justify-content: center;
+}
+.linhas{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+main h3{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+main h6{
+    font-family: 'Light';
+    font-size: 16px;
+}
+main h4{
+    font-family: 'Poppins';
+    font-size: 30px;
+    margin-top: 10px;
+}
+button{
+    padding: 5px;
+    border: solid 1px #000000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    margin-top: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+}
+.carrinho{
+    margin-right: 10px;
+    width: 20px;
+    height: 20px;
+}
+/*Fim do Main*/
+/*Início do Footer*/
+footer{
+    padding: 30px;
+    width: full;
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    height: 110px;
+}
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+.footer-item{
+    width: 70%;
+}
+.image-footer {
+    width: 20%;
+    height: 48px;
+}
+/*Fim do Footer*/
+/*Fim do Responsivo*/
+@media all and (max-width: 1550px){
+    .linhas{
+        display: block;
+        align-items: center;
+    }
+}
+@media all and (max-width: 850px){
+    .testto_clasic{
+        display: block;
+        align-items: center;
+    }
+    .testto_frango{
+        display: block;
+        align-items: center;
+    }
+    .duplo_anabolic{
+        display: block;
+        align-items: center;
+    }
+    .testto_bacon{
+        display: block;
+        align-items: center;
+    }
+    .batata_bacon{
+        display: block;
+        align-items: center;
+    }
+    .suco_natural{
+        display: block;
+        align-items: center;
+    }
+}
+/*Fim do Responsivo*/
