@@ -1,13 +1,27 @@
+/*Início do Geral*/
 *{
     margin: 0;
     padding: 0;
 }
+header{
+    position: relative;
+    z-index: 10;
+}
+main{
+    position: relative;
+    z-index: 20;
+}
+footer{
+    position: relative;
+    z-index: 1;
+}
+/*Fim do Geral*/
 /*Início do Header*/
 header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 60px;
+    height: 80px;
     background: #f0000f;
 }
 .dropbtn {
@@ -28,7 +42,8 @@ header{
     background-color: #f0000f;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    z-index: 20;
+    order: 1;
 }
 .dropdown-content a {
     color: black;
@@ -53,10 +68,15 @@ main{
     padding-bottom: 10px;
 }
 .logo_preta{
-    padding-top: 20px;
+    display: flex;
+    position: absolute;
+    padding-left: 10px;
+    order: 2;
     z-index: 10;
 }
 .cardapi_geral{
+    display: flex;
+    position: absolute;
     z-index: 1;
 }
 .testto_clasic{
@@ -115,6 +135,12 @@ button{
     width: 20px;
     height: 20px;
 }
+@media all and (max-width: 1550px){
+    .linhas{
+        display: block;
+        align-items: center;
+    }
+}
 /*Fim do Main*/
 /*Início do Footer*/
 footer{
@@ -133,10 +159,5 @@ footer{
 .image-footer {
     width: 20%;
     height: 48px;
-}
-@media all and (min-width: 800px){
-    footer{
-        order: 4;
-    }
 }
 /*Fim do Footer*/

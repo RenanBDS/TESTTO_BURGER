@@ -1,117 +1,139 @@
-if (document.readyState = "loading"){
-    document.addEventListener("DOMContentLoaded", ready)
-} else{
-    ready()
+const letras_compras = document.querySelectorAll(".letras_compras");
+letras_compras.forEach((button) => {
+  button.addEventListener("click", () => {
+    button.classList.toggle("verde");
+  });
+});
+
+function addProductToItens(event) {
+  const button = event.target;
+  const product = button.closest(".produto");
+  const productTitle = product.querySelector(".nome_do_produto").innerText;
+  const productPrice = product.querySelector(".preco_do_produto").innerText;
+  const productImage = product.querySelector(".imagem_do_produto").src;
+
+  // Cria um objeto com os dados do produto
+  const productData = {
+    title: productTitle,
+    price: productPrice,
+    image: productImage,
+    quantity: 1,
+  };
+
+  // Verifica se o carrinho já existe no localStorage
+  const itens = JSON.parse(localStorage.getItem("itens")) || [];
+
+  // Verifica se o produto já está no carrinho
+  const existingProduct = itens.find((item) => item.title === productData.title);
+  if (existingProduct) {
+    existingProduct.quantity += 1; // Incrementa a quantidade
+  } else {
+    itens.push(productData); // Adiciona novo produto ao carrinho
+  }
+
+  // Salva o carrinho atualizado no localStorage
+  localStorage.setItem("itens", JSON.stringify(itens));
+
+  alert("Produto adicionado ao carrinho!");
 }
 
-var totalAmount = "0,00"
+// Adiciona eventos de clique aos botões de "Comprar"
+document.addEventListener("DOMContentLoaded", () => {
+  const buyButtons = document.querySelectorAll(".comprar_item");
+  buyButtons.forEach((button) => {
+    button.addEventListener("click", addProductToItens);
+  });
+});
 
-function ready() {
-    const removeProductButtons = document.getElementsByClassName("botao_remover")
-    for (var i = 0; i < removeProductButtons.length; i++){
-        removeProductButtons[i].addEventListener("click", removeProduct)
-    }
+function loaditensItems() {
+  const itens = JSON.parse(localStorage.getItem("itens")) || [];
+  const itensTableBody = document.querySelector(".tabela_dos_itens tbody");
+  const itensTotalElement = document.querySelector(".valor_dos_itens");
+  let total = 0;
 
-    const quantityInputs = document.getElementsByClassName("product-qtd-input")
-    for (var i = 0; i < quantityInputs.length; i++){
-        quantityInputs[i].addEventListener("change", updateTotal)
-    }
+  itensTableBody.innerHTML = ""; // Limpa a tabela
 
-    const addToCartButtons = document.getElementsByClassName("button-hover-background")
-    for (var i = 0; i < addToCartButtons.length; i++){
-        addToCartButtons[i].addEventListener("click", addProductToCart)
-    }
+  itens.forEach((item) => {
+    const row = document.createElement("tr");
+    row.classList.add("itens_product");
 
-    const purchaseButtuns = document.getElementsByClassName("purchase-button")[0]
-    purchaseButtuns.addEventListener("click", makePurchase)
+    row.innerHTML = `
+            <td>
+                <img src="${item.image}" alt="${item.title}" class="imagem_do_produto">
+                <span>${item.title}</span>
+            </td>
+            <td>${item.price}</td>
+            <td>
+                <input type="number" value="${item.quantity}" min="1" class="product_qtd_input">
+            </td>
+            <td>
+                <button class="botao_remover">Remover</button>
+            </td>
+        `;
+
+    itensTableBody.appendChild(row);
+
+    const priceNumber = parseFloat(
+      item.price.replace("R$", "").replace(",", ".")
+    );
+    total += priceNumber * item.quantity;
+  });
+
+  itensTotalElement.innerText = `R$ ${total.toFixed(2).replace(".", ",")}`;
+
+  setupRemoveButtons();
+  setupQuantityInputs();
 }
 
-function makePurchase() {
-    if (totalAmount == "0,00"){
-        alert("Seu carrinho está vazio!")
-    } else{
-        alert(
-            `
-                Obrigado pela sua compra!
-                valor do pedido: ${totalAmount}
-                Volte sempre :)
-            `
-        )
-    }
-
-    document.querySelector(".itens").innerHTML = ""
-    updateTotal()
-}
-
-function checkIfInputIsNull(event) {
-    if(event.target.value == "0") {
-        event.target.value.parentElement.parentElement.remove()
-    }
-    
-    updateTotal()
+function setupRemoveButtons() {
+  const removeButtons = document.querySelectorAll(".botao_remover");
+  removeButtons.forEach((button) => {
+    button.addEventListener("click", removeProduct);
+  });
 }
 
 function removeProduct(event) {
-    event.target.parentElement.parentElement.remove()
-    updateTotal()
+  const button = event.target;
+  const productRow = button.closest("tr");
+  const productTitle = productRow.querySelector("span").innerText;
+
+  let itens = JSON.parse(localStorage.getItem("itens")) || [];
+  itens = itens.filter((item) => item.title !== productTitle);
+  localStorage.setItem("itens", JSON.stringify(itens));
+
+  loaditensItems();
 }
 
-const letras_compras = document.querySelectorAll('.letras_compras');
-letras_compras.forEach(button => {
-    button.addEventListener('click', () => {
-        button.classList.toggle('verde');
-    });
+function setupQuantityInputs() {
+  const quantityInputs = document.querySelectorAll(".product_qtd_input");
+  quantityInputs.forEach((input) => {
+    input.addEventListener("change", updateQuantity);
+  });
+}
+
+function updateQuantity(event) {
+  const input = event.target;
+  const productRow = input.closest("tr");
+  const productTitle = productRow.querySelector("span").innerText;
+
+  let itens = JSON.parse(localStorage.getItem("itens")) || [];
+  const product = itens.find((item) => item.title === productTitle);
+
+  if (input.value <= 0) {
+    itens = itens.filter((item) => item.title !== productTitle);
+  } else {
+    product.quantity = parseInt(input.value);
+  }
+
+  localStorage.setItem("itens", JSON.stringify(itens));
+  loaditensItems();
+}
+
+// Carrega os itens ao abrir a página
+document.addEventListener("DOMContentLoaded", loaditensItems);
+
+document.querySelector(".letras_ida_para_finalizacao").addEventListener("click", () => {
+    alert("Compra finalizada! Obrigado pela preferência.");
+    localStorage.removeItem("itens"); // Limpa o carrinho
+    loaditensItems();
 });
-
-function updateTotal() {
-    totalAmount = 0
-    const carProducts = document.getElementsByClassName("cart-product")
-    for (var i = 0; i < carProducts.length; i++){
-        const productPrice = carProducts[i].getElementsByClassName("cart-product-price")[0].innerText.replace("R$", "").replace(",", ".")
-        const productQuantity = carProducts[i].getElementsByClassName("product-qtd-input")[0].value
-    
-        totalAmount += productPrice * productQuantity
-    }
-    totalAmount = totalAmount.toFixed(2)
-    totalAmount = totalAmount.replace(".", ",")
-    document.querySelector("cart-total-container span").innerText = "R$" + totalAmount
-}
-
-function addProductToCart(event) {
-    const button = event.target
-    const productInfos = button.parentElement.parentElement
-    const productImage = productInfos.getElementsByClassName("imagem_do_produto")[0].src
-    const productTitle = productInfos.getElementsByClassName("nome_do_produto")[0].innerText
-    const productPrice = productInfos.getElementsByClassName("preco_do_produto")[0].innerText
-    
-    const productCarName = document.getElementsByClassName("cart-product-title")
-    for (var i = 0; i < productCarName.length; i++){
-        if (productCarName[i].innerText == productTitle){
-            productCarName[i].parentElement.parentElement.getElementsByClassName("product-qtd-input")[0].value++
-            return
-        }
-    }
-
-    let newCartProduct = document.createElement("tr")
-    newCartProduct.classList.add("cart-product")
-
-    newCartProduct.innerHTML = 
-    `
-        <div>
-            <img src="${productImage}" alt="${productTitle}" class="imagem_do_produto">
-            <div class="dados">
-                <h3 class="nome_do_produto"><strong>${productTitle}</strong></h3>
-                <h4 class="preco_do_produto"><em>${productPrice}</em></h4>
-                <input type="number" value="1" min="0" class="product-qtd-input">
-                <button type="button" class="botao_remover">Remover</button>
-            </div>
-        </div>
-    `
-
-    const tableBody = document.querySelector(".cart-table tbody")
-    tableBody.append(newCartProduct)
-
-    updateTotal()
-    newCartProduct.getElementsByClassName("product-qtd-input")[0].addEventListener("change", checkIfInputIsNull)
-    newCartProduct.getElementsByClassName("botao_remover")[0].addEventListener("click", removeProduct)
-}

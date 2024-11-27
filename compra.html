@@ -7,9 +7,40 @@
     <title>Carrinho</title>
 </head>
 <body>
+    <header>
+        <div class="dropdown">
+          <button class="dropbtn">☰</button>
+          <div class="dropdown-content">
+            <a href="index.html">Home</a>
+            <a href="cardapio.html">Cardápio</a>
+            <a href="compra.html">Carrinho</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+        <div class="menu-pesquisa"> 
+          <form action="#" method="post">
+            <input type="text" name="search" id="search" placeholder="Faça sua busca">
+          </form>
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+        </div>
+    </header>
     <main>
         <div class="itens">
-
+            <table class="tabela_dos_itens">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço</th>
+                        <th>Quantidade</th>
+                        <th>Remover</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Produtos do carrinho serão carregados aqui -->
+                </tbody>
+            </table>
+            <h3>Total: <span class="valor_dos_itens">R$ 0,00</span></h3>
         </div>
         <div class="caixa_compra">
             <div class="botoes_compra">
@@ -20,10 +51,17 @@
                 <button class="letras_compras"><b>Outro</b></button>
             </div>
             <div class="ir_para_finalizacao">
-                <button class="letras_ida_para_finalizacao">Finalizar</button>
+                <button class="letras_ida_para_finalizacao" onclick="pedido_finalizado.html">Finalizar</button>
             </div>
         </div>
     </main>
+    <footer class="footer">
+        <div class="footer-container">
+          <div class="footer-item"><img src="Imagens_Editado/politica.png"></div>
+          <div class="footer-item"><img src="Imagens_Editado/bandeiras_do_cartao.png"></div>
+          <div class="footer-item"><img src="Imagens_Editado/redes_socias.png"></div>
+        </div>
+    </footer>
 </body>
 <script async src="compra.js"></script>
 </html>
