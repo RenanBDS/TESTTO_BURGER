@@ -1,0 +1,336 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: "image.png";
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* min-height: 100vh; */ 
+    /* display: flex; */
+    /* grid-template-rows: min-content 1fr min-content; */
+}
+
+.page{
+    width: 1280px;
+    margin: auto;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    color: white;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 20px; */
+    height: 60px;
+    background: #f0000f;
+}
+
+footer{
+    padding: 30px;
+    /* background: #f0000f; */
+    /* background: white; */
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    /* background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 69%, rgba(255,255,255,1) 100%); */
+
+    
+    /* opacity: 70%; */
+    height: 110px;
+    /* overflow: auto; */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-item{
+    width: 70%;
+    ;
+
+}
+
+.logo{
+    margin: 10px;
+    padding: 10px;
+    width: 20%;
+    text-align: center;
+    font-size: 36px;
+}
+
+.links{
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+ul{
+    list-style: none;
+    text-align: justify;
+    display: flex;
+    font-size: 20px;
+}
+
+ul li{
+    margin: 10px;
+    align-self: flex-start;
+    text-align: center;
+}
+
+.menu-icon {
+    display: flex;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.menu-button {
+    display: none;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 10px;
+}
+@media (max-width: 768px) {
+    .links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 100%;
+        background-color: white;
+    }
+
+    .links.active {
+        display: flex; 
+    }
+
+    .menu-icon {
+        display: block; 
+    }
+
+    ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    ul li {
+        margin: 20px 0;
+    }
+}
+
+
+
+main{
+    background-size: cover ;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 24px;
+}
+
+.content{
+    margin: 10px;
+    padding: 10px;
+    width: 75%;
+    background-color: rgb(255, 255, 255);
+    height: 600px;
+}
+
+.sidebar{
+    margin: 10px;
+    padding: 10px;
+    width: 25%;
+    background-color: rgb(255, 255, 255);
+    height: 600px;
+}
+
+.wrapper{
+    display: flex;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.wrapper>*{
+    padding: 10px;
+    margin: 10px;
+    flex: 1 100%;
+    border-radius: 10px;
+}
+
+.main{
+    background-size: cover;
+    background-color: aquamarine;
+    color: black;
+    font-size: 48px;
+    height: 600px;
+}
+
+.aside1{
+    background-color: yellow;
+    color: black;
+    font-size: 48px;
+    height: 600px;
+}
+
+.aside2{
+    background-color: rgb(255, 81, 0);
+    font-size: 48px;
+    height: 600px;
+}
+
+@media all and (min-width: 800px){
+    .main{
+        flex:3;
+    }
+
+    .aside1{
+        order: 1;
+    }
+
+    .aside2{
+        order: 1;
+    }
+
+    footer{
+        order: 4;
+    }
+}
+
+@media all and (min-width: 600px){
+    .aside{
+        flex: 1;
+    }
+}
+
+/*Service.html*/
+section {
+    padding: 20px;
+    max-width: 768px;
+    width: 100vw;
+    margin: 0 auto;
+}
+
+section form label{
+    display: block;
+    margin: 20px 0;
+    color: white;
+}
+
+section form input{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    width: 50%;
+}
+
+section form button{
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    width: 100%;
+    color: white;
+    background: rgb(25, 25, 26);
+}
+
+.iframe h{
+    width: 100%;
+    height: 600px;
+    border: none;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.bg-image {
+    background-image:url("Imagens_Editado/imagem-de-hamburguer-de-alta-resolucao_999195-4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
+       /* background-size: 100% 100%; */
+    /* height: calc(100% - 170px); */
+}
+
+main {
+    /* height: 80px; */
+    height: calc(100% - 170px);
+    overflow-y: auto;
+}
+
+.image {
+    max-width:100%;
+    height: calc(100% - 170px);
+}
+
+.image-footer {
+    width: 20%;
+    height: 48px;
+}
+.menu {
+    
+        list-style:none;
+        border:1px solid #c0c0c0;
+        float:left;
+        
+}
+
+.dropbtn {
+    background-color: #f0000f;
+    color: white;
+     /* padding: 16px; */
+    font-size: 40px;
+    border: none;
+    max-height: 40px;
+    margin-left: 10px;
+  }
+  
+  .dropdown {
+    height: 60px;
+    /* position: relative; */
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f0000f;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .dropdown:hover .dropdown-content {display: block;}
+  
+  .dropdown:hover .dropbtn {background-color: #f0000f;}
+
+
+  .menu-pesquisa {
+    display: flex;
+    gap: 10px;
+  }
