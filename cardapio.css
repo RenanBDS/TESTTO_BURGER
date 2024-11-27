@@ -135,12 +135,6 @@ button{
     width: 20px;
     height: 20px;
 }
-@media all and (max-width: 1550px){
-    .linhas{
-        display: block;
-        align-items: center;
-    }
-}
 /*Fim do Main*/
 /*Início do Footer*/
 footer{
@@ -161,3 +155,37 @@ footer{
     height: 48px;
 }
 /*Fim do Footer*/
+/*Fim do Responsivo*/
+@media all and (max-width: 1550px){
+    .linhas{
+        display: block;
+        align-items: center;
+    }
+}
+@media all and (max-width: 850px){
+    .testto_clasic{
+        display: block;
+        align-items: center;
+    }
+    .testto_frango{
+        display: block;
+        align-items: center;
+    }
+    .duplo_anabolic{
+        display: block;
+        align-items: center;
+    }
+    .testto_bacon{
+        display: block;
+        align-items: center;
+    }
+    .batata_bacon{
+        display: block;
+        align-items: center;
+    }
+    .suco_natural{
+        display: block;
+        align-items: center;
+    }
+}
+/*Fim do Responsivo*/
