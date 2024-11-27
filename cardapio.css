@@ -155,7 +155,7 @@ footer{
     height: 48px;
 }
 /*Fim do Footer*/
-/*Fim do Responsivo*/
+/*Início do Responsivo*/
 @media all and (max-width: 1550px){
     .linhas{
         display: block;

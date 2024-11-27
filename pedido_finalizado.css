@@ -106,3 +106,8 @@ footer{
     height: 48px;
 }
 /*Fim do Footer*/
+/*Início do Responsivo*/
+@media all and (max-width: 1550px){
+    
+}
+/*Fim do Responsivo*/

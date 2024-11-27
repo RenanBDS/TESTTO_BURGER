@@ -47,7 +47,22 @@ header{
 }
 /*Fim do Header*/
 /*Início do Main*/
-
+main{
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 30px;
+    display: flex;
+}
+.localizacao{
+    padding-right: 20px;
+    width: 900px;
+    height: 500px;
+}
+.qrcode{
+    padding-top: 100px;
+    width: 300px;
+    height: 300px;
+}
 /*Fim do Main*/
 /*Início do Footer*/
 footer{
@@ -63,8 +78,70 @@ footer{
 .footer-item{
     width: 70%;
 }
-.image-footer {
-    width: 20%;
-    height: 48px;
-}
 /*Fim do Footer*/
+/*Início do Responsivo*/
+@media all and (max-width: 2200px){
+    .qrcode{
+        width: 200px;
+        height: 200px;
+    }
+    .localizacao{
+        width: 800px;
+        height: 400px;
+    }
+}
+@media all and (max-width: 1840px){
+    .qrcode{
+        width: 100px;
+        height: 100px;
+    }
+    .localizacao{
+        width: 600px;
+        height: 300px;
+    }
+}
+@media all and (max-width: 1490px){
+    .qrcode{
+        padding-top: 80px;
+        width: 100px;
+        height: 100px;
+    }
+    .localizacao{
+        width: 550px;
+        height: 250px;
+    }
+}
+@media all and (max-width: 1230px){
+    .qrcode{
+        padding-top: 55px;
+        width: 100px;
+        height: 100px;
+    }
+    .localizacao{
+        width: 450px;
+        height: 200px;
+    }
+}
+@media all and (max-width: 1060px){
+    .qrcode{
+        padding-top: 25px;
+        width: 100px;
+        height: 100px;
+    }
+    .localizacao{
+        width: 350px;
+        height: 150px;
+    }
+}
+@media all and (max-width: 1060px){
+    .qrcode{
+        padding-top: 25px;
+        width: 50px;
+        height: 50px;
+    }
+    .localizacao{
+        width: 200px;
+        height: 100px;
+    }
+}
+/*Fim do Responsivo*/
