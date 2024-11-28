@@ -47,7 +47,84 @@ header{
 }
 /*Fim do Header*/
 /*Início do Main*/
-
+main{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+}
+.container_entrega{
+    background-color: #FF0000;
+    padding: 30px;
+    border-radius: 25px;
+    width: 1270px;
+    height: 700px;
+    box-shadow: 15px 20px 5px #E0E3E5; 
+}
+.container_entrega h2{
+    /*font-family: Poppins; Fonte não existe*/
+    font-size: 48px;
+    color: white; 
+    text-align: center;
+    padding-bottom: 60px;
+}
+.formulario_de_entrega{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, auto);
+}
+.usuario{
+    /*font-family: Montserrat; Fonte não existe*/
+    font-size: 28px;
+    color: #000000B3;
+    padding: 10px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 34.5px;
+    background-color: #E0E3E5;
+    margin-bottom: 60px;
+    margin-left: 80px;
+    width: 455px;
+}
+.telefone{
+    margin-left: 80px;
+}
+.ddd{
+    /*font-family: Montserrat; Fonte não existe*/
+    font-size: 32px;
+    color: #000000B3;
+    padding: 10px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 34.5px;
+    background-color: #E0E3E5;
+    width: 132px;
+}
+.celular{
+    /*font-family: Montserrat; Fonte não existe*/
+    font-size: 32px;
+    color: #000000B3;
+    padding: 10px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 34.5px;
+    background-color: #E0E3E5;
+    width: 318px;
+}
+.finalizar{
+    /*font-family: Poppins; Fonte não existe*/
+    background-color: #E0E3E5;
+    font-size: 35px;
+    border: none;
+    border-radius: 34.5px;
+    color: #000000B3;
+    width: 304px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-left: 150px;
+}
 /*Fim do Main*/
 /*Início do Footer*/
 footer{
@@ -68,3 +145,24 @@ footer{
     height: 48px;
 }
 /*Fim do Footer*/
+/*Início do Responsivo*/
+@media all and (max-width: 1200px){
+    .container_entrega{
+        height: 1000px;
+    }
+    .usuario{
+        text-align:center;
+        margin-left: 0px;
+    }
+    .telefone{
+        margin-bottom: 50px;
+        margin-left: 0px;
+    }
+    .finalizar{
+        margin-left: 600px;
+    }
+    .formulario_de_entrega{
+        display: block;
+    }
+}
+/*Fim do Responsivo*/
