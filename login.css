@@ -75,6 +75,10 @@ header{
     text-align: center;
     padding-bottom: 50px;
 }
+.login-form button a{
+    color: #ffffff;
+    text-decoration: none;
+}
 .input-field-text{
     /*font-family: Montserrat; Fonte não existe*/
     font-size: 28px;
