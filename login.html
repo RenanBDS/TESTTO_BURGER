@@ -1,13 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Página Web</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
-<body class="bg-image">
+<body>  
   <header>
     <div class="dropdown">
       <button class="dropbtn">☰</button>
@@ -27,8 +29,17 @@
       <i class="fa fa-user-o" aria-hidden="true"></i>
     </div>
   </header>
-  <main>
-    
+  <main class="main-content">
+      <div class="login-container">
+          <form class="login-form">
+              <h2>Fazer login</h2>
+              <input type="text" class="input-field-text" placeholder="Email ou CPF">
+              <input type="password" class="input-field-password" placeholder="Senha">
+              <a href="https://example.com/forgot-password" class="forgot-password">Esqueceu sua senha?</a>
+              <button class="entrar">Entrar</button>
+              <button class="criar_conta">Cadastre-se</button>
+          </form>
+      </div>
   </main>
   <footer class="footer">
     <div class="footer-container">
