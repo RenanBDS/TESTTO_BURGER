@@ -51,6 +51,36 @@ header{
 main{
     display: flex;
     justify-content: center;
+    gap: 10px
+}
+.tabela_com_os_produtos{
+    margin-top: 100px;
+    background-color: #ffffff;
+    width: 320px;
+    height: 250px;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.total-container{
+    margin-top: 100px;
+    background-color: #ffffff;
+    width: 320px;
+    height: 250px;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.produto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.cart-product-price {
+    margin-left: 10px;
+    color: #333;
+    font-size: 14px;
 }
 .botoes_compra{
     margin-top: 100px;
