@@ -38,30 +38,73 @@ header{
     text-decoration: none;
     display: block;
 } 
-.dropdown-content a:hover {background-color: #ddd;}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: #FF0000;}
 .menu-pesquisa {
     display: flex;
     gap: 10px;
 }
+.onclick_header{
+    color: #000000;
+    text-decoration: none;
+}
 /*Fim do Header*/
 /*Início do Main*/
-main{
-    padding-right: 30px;
-    padding-left: 30px;
-    padding-top: 30px;
+.main-content{
+    flex: 1;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
 }
-.localizacao{
-    padding-right: 20px;
-    width: 900px;
-    height: 500px;
+.login-container{
+    background-color: #FF0000;
+    padding: 30px;
+    border-radius: 25px;
+    width: 100%;
+    width: 500px;
+    box-shadow: 15px 20px 5px #E0E3E5;
 }
-.qrcode{
-    padding-top: 100px;
-    width: 300px;
-    height: 300px;
+.login-form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.login-form h2{
+    /*font-family: Poppins; Fonte não existe*/
+    font-size: 48px;
+    color: white; 
+    text-align: center;
+    padding-bottom: 50px;
+}
+.login-form p{
+    /*font-family: Poppins; Fonte não existe*/
+    font-size: 36px;
+    color: white; 
+    text-align: center;
+    padding-bottom: 50px;
+}
+.input-field-text{
+    /*font-family: Montserrat; Fonte não existe*/
+    font-size: 28px;
+    color: #000000B3;
+    padding: 10px;
+    padding-left: 20px;
+    border: none;
+    border-radius: 34.5px;
+    background-color: #E0E3E5;
+    margin-bottom: 50px;
+    width: 350px;
+}
+.enviar{
+    /*font-family: Poppins; Fonte não existe*/
+    font-size: 35px;
+    border: none;
+    border-radius: 34.5px;
+    margin-top: 20px;
+    color: #000000B3;
+    width: 267.92px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 /*Fim do Main*/
 /*Início do Footer*/
@@ -80,68 +123,36 @@ footer{
 }
 /*Fim do Footer*/
 /*Início do Responsivo*/
-@media all and (max-width: 2200px){
-    .qrcode{
-        width: 200px;
-        height: 200px;
+@media all and (max-width: 570px){
+    .login-container{
+        width: 250px;
     }
-    .localizacao{
-        width: 800px;
-        height: 400px;
+    .login-form h2{
+        font-size: 24px;
+        padding-bottom: 25px;
     }
-}
-@media all and (max-width: 1840px){
-    .qrcode{
-        width: 100px;
-        height: 100px;
+    .input-field-text{
+        font-size: 14px;
+        width: 175px;
+        margin-bottom: 25px;
     }
-    .localizacao{
-        width: 600px;
-        height: 300px;
+    .input-field-password{
+        font-size: 14px;
+        width: 175px;
     }
-}
-@media all and (max-width: 1490px){
-    .qrcode{
-        padding-top: 80px;
-        width: 100px;
-        height: 100px;
+    .forgot-password{
+        font-size: 12px;
+        padding-left: 100px;
     }
-    .localizacao{
-        width: 550px;
-        height: 250px;
+    .enviar{
+        font-size: 17.5px;
+        width: 133.96px;
+        padding-top: 7.5px;
+        padding-bottom: 7.5px;
     }
-}
-@media all and (max-width: 1230px){
-    .qrcode{
-        padding-top: 55px;
-        width: 100px;
-        height: 100px;
-    }
-    .localizacao{
-        width: 450px;
-        height: 200px;
-    }
-}
-@media all and (max-width: 1060px){
-    .qrcode{
-        padding-top: 25px;
-        width: 100px;
-        height: 100px;
-    }
-    .localizacao{
-        width: 350px;
-        height: 150px;
-    }
-}
-@media all and (max-width: 1060px){
-    .qrcode{
-        padding-top: 25px;
-        width: 50px;
-        height: 50px;
-    }
-    .localizacao{
-        width: 200px;
-        height: 100px;
+    .criar_conta{
+        font-size: 12px;
+        margin-bottom: 100px;
     }
 }
 /*Fim do Responsivo*/

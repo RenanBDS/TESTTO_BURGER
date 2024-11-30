@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Página Web</title>
-  <link rel="stylesheet" href="localizacao.css">
+  <link rel="stylesheet" href="recuperar_senha.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -22,14 +22,24 @@
       <form action="#" method="post">
         <input type="text" name="search" id="search" placeholder="Faça sua busca">
       </form>
-      <i class="fa fa-user-o" aria-hidden="true"></i>
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      <a href="login.html" class="onclick_header">          
+        <i class="fa fa-user-o" aria-hidden="true"></i>
+      </a>
+      <a href="compra.html" class="onclick_header">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+      </a>
     </div>
   </header>
 
-  <main>
-    <img class="localizacao" src="Imagens_Editado/localizacao.png" alt="Localização">
-    <img class="qrcode" src="Imagens_Editado/qrcode.png" alt="QRcode">
+  <main class="main-content">
+    <div class="login-container">
+        <form class="login-form">
+            <h2>Recuperar senha</h2>
+            <p>Digite o e-mail associado à sua conta</p>
+            <input type="text" class="input-field-text" placeholder="E-mail">
+            <button class="enviar">Enviar</button>
+        </form>
+    </div>
   </main>
 
   <footer class="footer">
@@ -40,4 +50,5 @@
     </div>
   </footer>
 </body>
+<script src="recuperar_senha.js"></script>
 </html>

@@ -38,12 +38,13 @@ header{
     text-decoration: none;
     display: block;
 } 
-.dropdown-content a:hover {background-color: #ddd;}
-.dropdown:hover .dropdown-content {display: block;}
-.dropdown:hover .dropbtn {background-color: #FF0000;}
 .menu-pesquisa {
     display: flex;
     gap: 10px;
+}
+.onclick_header{
+    color: #000000;
+    text-decoration: none;
 }
 /*Fim do Header*/
 /*Início do Main*/
@@ -85,6 +86,10 @@ main{
     background-color: #FF0000;
     color: #DDE6ED;
     border: none;
+}
+.onclick{
+    color: #ffffff;
+    text-decoration: none;
 }
 /*Fim do Main*/
 /*Início do Footer*/

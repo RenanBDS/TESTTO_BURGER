@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="cardapio.css">
     <title>Cardápio</title>
 </head>
@@ -18,12 +19,16 @@
           </div>
         </div>
         <div class="menu-pesquisa"> 
-          <form action="#" method="post">
-            <input type="text" name="search" id="search" placeholder="Faça sua busca">
-          </form>
-          <i class="fa fa-user-o" aria-hidden="true"></i>
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        </div>
+            <form action="#" method="post">
+              <input type="text" name="search" id="search" placeholder="Faça sua busca">
+            </form>
+            <a href="login.html" class="onclick_header">          
+              <i class="fa fa-user-o" aria-hidden="true"></i>
+            </a>
+            <a href="compra.html" class="onclick_header">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </a>
+          </div>
     </header>
     <main>
         <div class="cardapio_geral">
@@ -121,34 +126,5 @@
     </footer>
     <script src="compra.js" async></script>
 </body>
-<script>
-    document.querySelectorAll('.comprar_item').forEach((button) => {
-        button.addEventListener('click', () => {
-            const productElement = button.closest('.dados');
-            const productName = productElement.querySelector('.nome_do_produto').innerText;
-            const productPrice = productElement.querySelector('.preco_do_produto').innerText;
-
-            // Converter o preço para número
-            const product = {
-                name: productName,
-                price: parseFloat(productPrice.replace('R$', '').trim()), // Converte o preço para número
-                quantity: 1,
-            };
-
-            // Recuperar carrinho existente
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-            // Verificar se o produto já está no carrinho
-            const existingProductIndex = cart.findIndex((p) => p.name === product.name);
-            if (existingProductIndex > -1) {
-                cart[existingProductIndex].quantity += 1; // Incrementa a quantidade
-            } else {
-                cart.push(product); // Adiciona novo produto
-            }
-
-            localStorage.setItem('cart', JSON.stringify(cart)); // Salva no localStorage
-            alert(`${product.name} foi adicionado ao carrinho!`);
-        });
-    });
-</script>
+<script src="cardapio.js"></script>
 </html>

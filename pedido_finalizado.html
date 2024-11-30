@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="pedido_finalizado.css">
     <title>Pedido Finalizado</title>
 </head>
@@ -21,20 +22,21 @@
           <form action="#" method="post">
             <input type="text" name="search" id="search" placeholder="Faça sua busca">
           </form>
-          <i class="fa fa-user-o" aria-hidden="true"></i>
-          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <a href="login.html" class="onclick_header">          
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+          </a>
+          <a href="compra.html" class="onclick_header">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
         </div>
     </header>
     <main>
-        <div class="itens">
-
-        </div>
         <div class="caixa_de_finalizacao">
             <div class="botao_finalizado">
                 <button class="letras_finalizado"><i><b>PEDIDO FINALIZADO !</b></i></button>
             </div>
             <div class="acompanhar_pedido">
-                <button class="letras_acompanhe">Acompanhe seu pedido</button>
+                <button class="letras_acompanhe"><a href="localizacao.html" class="onclick">Acompanhe seu pedido</a></button>
             </div>
         </div>
     </main>
@@ -46,4 +48,5 @@
         </div>
     </footer>
 </body>
+<script src="pedido_finalizado.js"></script>
 </html>
