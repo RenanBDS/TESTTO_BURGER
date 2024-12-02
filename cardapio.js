@@ -2,11 +2,15 @@ document.querySelectorAll('.comprar_item').forEach((button) => {
   button.addEventListener('click', () => {
       const productElement = button.closest('.dados');
       const productName = productElement.querySelector('.nome_do_produto').innerText;
+      const productDescricao = productElement.querySelector('.descricao').innerText;
       const productPrice = productElement.querySelector('.preco_do_produto').innerText;
+      const productImage = productElement.previousElementSibling.src; // Obtém o src da imagem do produto
 
       // Converter o preço para número
       const product = {
+          image: productImage, // Adiciona a URL da imagem
           name: productName,
+          descricao: productDescricao,
           price: parseFloat(productPrice.replace('R$', '').trim()), // Converte o preço para número
           quantity: 1,
       };

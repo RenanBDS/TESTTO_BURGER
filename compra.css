@@ -52,39 +52,99 @@ header{
 main{
     display: flex;
     justify-content: center;
-    gap: 10px
+    width: full;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 .tabela_com_os_produtos{
     margin-top: 100px;
     background-color: #ffffff;
-    width: 320px;
+    width: 400px;
     height: 250px;
     border-radius: 25px;
     padding-top: 20px;
     padding-left: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
-.total-container{
-    margin-top: 100px;
-    background-color: #ffffff;
-    width: 320px;
-    height: 250px;
-    border-radius: 25px;
-    padding-top: 20px;
-    padding-left: 20px;
+.dadosItens{
+    width: 130px;
 }
-.produto {
+.dados {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-bottom: 10px;
 }
-.cart-product-price {
-    margin-left: 10px;
-    color: #333;
-    font-size: 14px;
+.imagem_do_produto {
+    max-width: 200px;
+    max-height: 100px;
+}
+main h3{
+    font-size: 15px;
+}
+.descricao{
+    white-space: pre-line;
+}
+main h4{
+    font-family: 'Poppins';
+    font-size: 20px;
+}
+.quant_item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+.quantidade-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantidade-input{
+    border: none;
+    width: 10px;
+}
+.quantidade-btn{
+    background-color: #ffffff;
+    padding: 10px;
+    border: none;
+}
+/* Remove os spinners do campo de número no Chrome, Safari e Edge */
+.quantidade-input::-webkit-inner-spin-button,
+.quantidade-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Remove os spinners no Firefox */
+.quantidade-input {
+  -moz-appearance: textfield;
+}
+.carrinho{
+    align-items: center;
+    justify-items: center;
+    width: 15px;
+    height: 15px;
+    padding-right: 5px;
+}
+.remove-product-button {
+  background-color: #FF0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.textoTotal{
+    padding-left: 110px;
+}
+.caixa_compra{
+    padding-left: 50px;
+    margin-top: 100px;
 }
 .botoes_compra{
-    margin-top: 100px;
     background-color: #FF0000;
     width: 320px;
     height: 250px;
@@ -117,6 +177,8 @@ main{
     box-shadow: 10px 10px 10px 0px;
 }
 .letras_ida_para_finalizacao{
+    align-items: center;
+    justify-items: center;
     border-radius: 50px;
     padding-top: 10px;
     padding-left: 30px;
