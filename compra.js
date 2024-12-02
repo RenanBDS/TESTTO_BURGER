@@ -5,129 +5,80 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function loadCartItems() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
-  const cartTable = document.querySelector('.tabela_com_os_produtos');
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const cartTable = document.querySelector(".tabela_com_os_produtos");
 
-  cartTable.innerHTML = ''; // Limpa os itens do carrinho
-
-  if (cart.length === 0) {
-    cartTable.innerHTML = '<p>O carrinho está vazio!</p>';
-    return;
-  }
+  cartTable.innerHTML = ""; // Limpa a tabela antes de adicionar os novos itens
 
   cart.forEach((item, index) => {
-    const cartItem = document.createElement('div');
-    cartItem.classList.add('dados');
-
+    const cartItem = document.createElement("tr");
+    cartItem.classList.add("cart-item");
     cartItem.innerHTML = `
-    <img src="${item.image}" alt="${item.name}" class="imagem_do_produto">
-    <div class="dadosItens">
-      <h3 class="nome_do_produto"><strong>${item.name}</strong></h3>
-      <h6 class="descricao"><em>${item.descricao}</em></h6>
-      <h4 class="preco_do_produto"><em>R$ ${item.price.toFixed(2)}</em></h4>
-      <div class="quant_item">
-        <div class="quantidade-container">
-          <img src="Imagens_Editado/imagem_carrinho.png" class="carrinho">
-          <button class="quantidade-btn" data-action="decrement" data-index="${index}">-</button>
-          <input type="number" class="quantidade-input" value="${item.quantity}" min="0" data-index="${index}">
-          <button class="quantidade-btn" data-action="increment" data-index="${index}">+</button>
-        </div>
-      </div>
-      <button id="removeProduct" class="remove-product-button" data-index="${index}">Remover</button>
-    </div>
-    `;
-
+          <div class="ajuste">
+            <img src="${item.image}" alt="${item.name}" class="imagem_do_produto">
+            <div class="dadosItens">
+              <h3 class="nome_do_produto"><strong>${item.name}</strong></h3>
+              <h6 class="descricao"><em>${item.descricao}</em></h6>
+              <h4 class="preco_do_produto"><em>R$ ${item.price.toFixed(2)}</em></h4>
+              <div class="quant_item">
+                <div class="quantidade-container">
+                  <img src="Imagens_Editado/imagem_carrinho.png" class="carrinho">
+                  <button class="quantidade-btn" data-action="decrement" data-index="${index}">-</button>
+                  <input type="number" class="quantidade-input" value="${item.quantity}" min="0" data-index="${index}">
+                  <button class="quantidade-btn" data-action="increment" data-index="${index}">+</button>
+                </div>
+              </div>
+              <button id="removeProduct" class="remove-product-button" data-index="${index}">Remover</button>
+            </div>
+          </div>
+        `;
     cartTable.appendChild(cartItem);
   });
 
-  setupQuantityButtons();
+  // Atualizar o total após a inserção dos itens
   updateTotal();
 }
 
-function setupQuantityButtons() {
-  document.querySelectorAll('.quantidade-container').forEach(container => {
-    const decrementBtn = container.querySelector('[data-action="decrement"]');
-    const incrementBtn = container.querySelector('[data-action="increment"]'); // Linha com erro
-    const input = container.querySelector('.quantidade-input');
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("quantidade-btn")) {
+    const index = event.target.dataset.index; // Obtém o índice do item
+    const action = event.target.dataset.action; // Obtém a ação (increment ou decrement)
 
-    decrementBtn.addEventListener('click', () => {
-      const index = input.dataset.index;
-      let currentValue = parseInt(input.value);
-      if (currentValue > 0) {
-        input.value = currentValue - 1;
-        updateItemQuantity(index, parseInt(input.value)); // Atualiza a quantidade
-        loadCartItems(); // Recarregar os itens visuais
-      }
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    if (!cart[index]) return; // Verifica se o item existe no carrinho
 
-      // Remove o item se chegar a 0
-      if (parseInt(input.value) === 0) {
-        removeItemFromCart(index);
-        loadCartItems(); // Recarrega os itens visuais
-      }
-    });
+    if (action === "increment") {
+      cart[index].quantity += 1; // Incrementa a quantidade
+    } else if (action === "decrement" && cart[index].quantity > 1) {
+      cart[index].quantity -= 1; // Decrementa a quantidade (mínimo 1)
+    } else if (action === "decrement" && cart[index].quantity === 1) {
+      // Remove o item se a quantidade for 1 e o botão de decremento for pressionado
+      cart.splice(index, 1);
+    }
 
-    incrementBtn.addEventListener('click', () => { // Linha com erro
-      const index = input.dataset.index;
-      let currentValue = parseInt(input.value);
-      input.value = currentValue + 1;
-      updateItemQuantity(index, parseInt(input.value)); // Atualiza a quantidade
-      loadCartItems(); // Recarregar os itens visuais
-    });
-
-    input.addEventListener('input', () => {
-      const index = input.dataset.index;
-      const newQuantity = parseInt(input.value);
-
-      if (newQuantity === 0) {
-        removeItemFromCart(index);
-        loadCartItems(); // Recarrega os itens visuais
-      } else {
-        updateItemQuantity(index, newQuantity); // Atualiza a quantidade
-        loadCartItems(); // Recarregar os itens visuais
-      }
-    });
-  });
-}
-
-incrementBtn.addEventListener('click', () => {
-  const index = input.dataset.index;
-  let currentValue = parseInt(input.value);
-  input.value = currentValue + 1;
-  updateItemQuantity(index, parseInt(input.value)); // Atualiza a quantidade
-  updateTotal(); // Atualiza o total
+    localStorage.setItem("cart", JSON.stringify(cart)); // Atualiza o localStorage
+    loadCartItems(); // Recarrega os itens no DOM
+    updateTotal(); // Recalcula o total
+  }
 });
 
-decrementBtn.addEventListener('click', () => {
-  const index = input.dataset.index;
-  let currentValue = parseInt(input.value);
-  if (currentValue > 0) {
-    input.value = currentValue - 1;
-    updateItemQuantity(index, parseInt(input.value)); // Atualiza a quantidade
-  }
+document.addEventListener("input", function (event) {
+  if (event.target.classList.contains("quantidade-input")) {
+    const index = event.target.dataset.index; // Índice do item no carrinho
+    const newQuantity = parseInt(event.target.value); // Nova quantidade
 
-  // Remove o item se chegar a 0
-  if (parseInt(input.value) === 0) {
-    removeItemFromCart(index);
-    loadCartItems(); // Recarrega os itens visuais
+    if (isNaN(newQuantity) || newQuantity <= 0) {
+      // Se a quantidade for inválida ou zero, remove o item
+      removeItemFromCart(index);
+    } else {
+      // Caso contrário, atualiza a quantidade
+      updateItemQuantity(index, newQuantity);
+    }
+
+    loadCartItems(); // Recarregar os itens
+    updateTotal(); // Recalcular o total
   }
-  updateTotal(); // Atualiza o total
 });
-
-// Funções auxiliares
-function removeItemFromCart(index) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.splice(index, 1); // Remove o item
-  localStorage.setItem('cart', JSON.stringify(cart)); // Atualiza o localStorage
-}
-
-function updateItemQuantity(index, quantity) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  if (cart[index]) {
-    cart[index].quantity = quantity; // Atualiza a quantidade no item
-    localStorage.setItem('cart', JSON.stringify(cart)); // Salva no localStorage
-  }
-  updateTotal(); // Recalcula o total automaticamente
-}
 
 function setupCartListeners() {
   // Adiciona um ouvinte para o botão "Remover" de cada produto
@@ -152,10 +103,9 @@ document.addEventListener("click", function (event) {
 
 // Função para remover o item do carrinho no localStorage
 function removeItemFromCart(index) {
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  cart.splice(index, 1); // Remove o item
-  localStorage.setItem('cart', JSON.stringify(cart)); // Atualiza o localStorage
-  updateTotal(); // Recalcula o total automaticamente
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.splice(index, 1); // Remove o item com o índice especificado
+  localStorage.setItem("cart", JSON.stringify(cart)); // Atualiza o localStorage
 }
 
 document.addEventListener("input", function (event) {
@@ -177,12 +127,14 @@ function updateItemQuantity(index, quantity) {
 }
 
 function updateTotal() {
-  const cart = JSON.parse(localStorage.getItem('cart')) || [];
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  const totalContainer = document.querySelector('#totalValue');
+  const totalContainer = document.querySelector("#totalValue");
   if (totalContainer) {
     totalContainer.innerText = `R$ ${total.toFixed(2)}`;
+  } else {
+    console.error("Elemento de total não encontrado no DOM.");
   }
 }
 
@@ -195,32 +147,10 @@ if (localStorage.getItem("cart")) {
   loadCartItems();
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  const addButton = document.querySelector('#addProduct');
-  const removeButton = document.querySelector('#removeProduct');
-  const container = document.querySelector('.tabela_com_os_produtos');
-
-  // Verifica se os elementos existem
-  if (addButton && removeButton && container) {
-    addButton.addEventListener('click', () => {
-      addItemToContainer('Produto Novo');
-    });
-
-    removeButton.addEventListener('click', () => {
-      removeLastItemFromContainer();
-    });
-  } else {
-    console.error('Elementos não encontrados no DOM.');
-  }
-});
-
 const letras_compras = document.querySelectorAll(".letras_compras");
 letras_compras.forEach((button) => {
   button.addEventListener("click", () => {
-    // Remove a classe "verde" de todos os botões
-    letras_compras.forEach((btn) => btn.classList.remove("verde"));
-    // Adiciona a classe "verde" apenas ao botão clicado
-    button.classList.add("verde");
+    button.classList.toggle("verde");
   });
 });
 
@@ -233,6 +163,3 @@ dropdown.addEventListener("click", function () {
     dropdownContenT.style.display = "block";
   }
 });
-
-console.log('Decrement Button:', decrementBtn);
-console.log('Increment Button:', incrementBtn);

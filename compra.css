@@ -56,6 +56,10 @@ main{
     padding-top: 10px;
     padding-bottom: 10px;
 }
+.ajuste{
+    display: flex;
+    justify-content: space-between;
+}
 .tabela_com_os_produtos{
     margin-top: 100px;
     background-color: #ffffff;
@@ -64,21 +68,23 @@ main{
     border-radius: 25px;
     padding-top: 20px;
     padding-left: 20px;
-    overflow-y: hidden;
-    overflow-x: hidden;
 }
 .dadosItens{
     width: 130px;
-}
-.dados {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
 }
 .imagem_do_produto {
     max-width: 200px;
     max-height: 100px;
+}
+.botoes_compra{
+    background-color: #FF0000;
+    width: 320px;
+    height: 250px;
+    border-radius: 25px;
+    padding-top: 20px;
+    padding-left: 20px;
+    box-shadow: 20px 15px 10px 0px;
 }
 main h3{
     font-size: 15px;
@@ -111,16 +117,19 @@ main h4{
     background-color: #ffffff;
     padding: 10px;
     border: none;
+    cursor: pointer;
 }
 /* Remove os spinners do campo de número no Chrome, Safari e Edge */
 .quantidade-input::-webkit-inner-spin-button,
-.quantidade-input::-webkit-outer-spin-button {
+.quantidade-input::-webkit-outer-spin-button{
   -webkit-appearance: none;
   margin: 0;
 }
 /* Remove os spinners no Firefox */
-.quantidade-input {
-  -moz-appearance: textfield;
+.quantidade-input{
+  -moz-appearance: textfield; /* Firefox */
+  -webkit-appearance: textfield; /* Chrome, Safari */
+  appearance: textfield;
 }
 .carrinho{
     align-items: center;
@@ -143,15 +152,6 @@ main h4{
 .caixa_compra{
     padding-left: 50px;
     margin-top: 100px;
-}
-.botoes_compra{
-    background-color: #FF0000;
-    width: 320px;
-    height: 250px;
-    border-radius: 25px;
-    padding-top: 20px;
-    padding-left: 20px;
-    box-shadow: 20px 15px 10px 0px;
 }
 .letras_compras{
     display: flex;
