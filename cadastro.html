@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+  <title>Cadastro</title>
   <meta charset="UTF-8">
-  <title>Página Web</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/CSS/cadastro.css">
@@ -19,6 +19,9 @@
         <a href="entrega.html">Endereço de Entrega</a>
       </div>
     </div>
+    <div>
+      <img src="/Imagens_Editado/logo_fitness_branca.png" alt="Logo Branca" class="logo">
+    </div>
     <div class="menu-pesquisa"> 
       <form action="#" method="post">
         <input type="text" name="search" id="search" placeholder="Faça sua busca">
@@ -31,10 +34,11 @@
       </a>
     </div>
   </header>
+
   <main>
-    <div class="container_entrega">
+    <div class="container_cadastro">
       <h2>Cadastro</h2>
-      <form class="formulario_de_entrega">
+      <form class="formulario_de_cadastro">
           <input type="text" class="usuario" placeholder="Nome completo">
           <input type="text" class="usuario" placeholder="E-mail">
           <input type="number" class="usuario" placeholder="CPF">
@@ -50,7 +54,13 @@
       </form>
   </div>
   </main>
+
   <footer class="footer">
+    <div>
+      <button class="botao_voltar" onclick="voltarParaPagina()">
+        <i class="fa fa-arrow-left"></i><b>voltar</b>
+      </button>
+    </div>
     <div class="footer-container">
       <div class="footer-item"><img src="Imagens_Editado/politica.png"></div>
       <div class="footer-item"><img src="Imagens_Editado/bandeiras_do_cartao.png"></div>
@@ -58,5 +68,6 @@
     </div>
   </footer>
 </body>
+
 <script src="/JS/cadastro.js"></script>
 </html>

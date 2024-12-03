@@ -7,3 +7,16 @@ dropdown.addEventListener("click", function () {
     dropdownContenT.style.display = "block";
   }
 });
+
+function mensagemEnvio() {
+  alert("Login feito com sucesso!");
+  const campoUsuario = document.querySelector(".input-field-text");
+  const campoSenha = document.querySelector(".input-field-password");
+
+  campoUsuario.value = "";
+  campoSenha.value = "";
+}
+
+function voltarParaPagina() {
+  window.location.href = "index.html";
+}

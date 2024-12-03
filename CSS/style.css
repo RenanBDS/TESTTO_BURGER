@@ -1,7 +1,13 @@
 /*Início do Geral*/
-*{
+html,body{
+    height: 100%;
     margin: 0;
-    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
 }
 /*Fim do Geral*/
 /*Início do Header*/
@@ -9,11 +15,12 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 80px;
-    background: #f0000f;
+    height: 60px;
+    background: #FF0000;
+    padding: 0 20px;
 }
 .dropbtn {
-    background-color: #f0000f;
+    background-color: #FF0000;
     color: white;
     font-size: 40px;
     border: none;
@@ -27,7 +34,7 @@ header{
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #f0000f;
+    background-color: #FF0000;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -37,30 +44,43 @@ header{
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+} 
+.logo{
+    padding-left: 10px;
+    width: 50px;
+    height: 50px;
 }
 .menu-pesquisa {
     display: flex;
     gap: 10px;
+    margin-left: auto;
 }
 .onclick_header{
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
 }
 /*Fim do Header*/
 /*Início do Main*/
-main{
-    background-size: cover ;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-size: 24px;
+main {
+    flex: 1;
+    height: calc(100% - 170px);
+    overflow-y: auto;
+}
+
+.bg-image {
+    background-image:url("/Imagens_Editado/fundo_index.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 20%;
 }
 /*Fim do Main*/
 /*Início do Footer*/
 footer{
     padding: 30px;
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);  
+    opacity: 70%;
     height: 110px;
+    margin-top: auto;
 }
 .footer-container {
     display: flex;
@@ -68,16 +88,11 @@ footer{
 }
 .footer-item{
     width: 70%;
+    margin-left: 10%;
 }
 /*Fim do Footer*/
 /*Início do Responsivo*/
 @media all and (min-width: 800px){
-    .main{
-        flex:3;
-    }
-
-    footer{
-        order: 4;
-    }
+    
 }
 /*Fim do Responsivo*/

@@ -18,3 +18,7 @@ function mensagemEnvio(){
   campoDDD.value = '';
   campoCelular.value = '';
 }
+
+function voltarParaPagina() {
+  window.location.href = "login.html";
+}

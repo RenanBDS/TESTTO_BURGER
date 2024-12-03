@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
     <title>Pedido Finalizado</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/CSS/pedido_finalizado.css">
 </head>
+
 <body>
     <header>
         <div class="dropdown">
@@ -17,6 +18,9 @@
             <a href="localizacao.html">Localização</a>
             <a href="entrega.html">Endereço de Entrega</a>
           </div>
+        </div>
+        <div>
+          <img src="/Imagens_Editado/logo_fitness_branca.png" alt="Logo Branca" class="logo">
         </div>
         <div class="menu-pesquisa"> 
           <form action="#" method="post">
@@ -30,6 +34,7 @@
           </a>
         </div>
     </header>
+
     <main>
         <div class="caixa_de_finalizacao">
             <div class="botao_finalizado">
@@ -40,7 +45,13 @@
             </div>
         </div>
     </main>
+
     <footer class="footer">
+        <div>
+          <button class="botao_voltar" onclick="voltarParaPagina()">
+            <i class="fa fa-arrow-left"></i><b>voltar</b>
+          </button>
+        </div>
         <div class="footer-container">
           <div class="footer-item"><img src="Imagens_Editado/politica.png"></div>
           <div class="footer-item"><img src="Imagens_Editado/bandeiras_do_cartao.png"></div>
@@ -48,5 +59,6 @@
         </div>
     </footer>
 </body>
+
 <script src="/JS/pedido_finalizado.js"></script>
 </html>

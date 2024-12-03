@@ -7,3 +7,7 @@ dropdown.addEventListener("click", function () {
     dropdownContenT.style.display = "block";
   }
 });
+
+function voltarParaPagina() {
+  window.location.href = "compra.html";
+}

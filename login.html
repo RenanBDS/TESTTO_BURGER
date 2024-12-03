@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
   <title>Login</title>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="/CSS/login.css">
 </head>
+
 <body>  
   <header>
     <div class="dropdown">
@@ -17,6 +18,9 @@
         <a href="localizacao.html">Localização</a>
         <a href="entrega.html">Endereço de Entrega</a>
       </div>
+    </div>
+    <div>
+      <img src="/Imagens_Editado/logo_fitness_branca.png" alt="Logo Branca" class="logo">
     </div>
     <div class="menu-pesquisa"> 
       <form action="#" method="post">
@@ -30,6 +34,7 @@
       </a>
     </div>
   </header>
+
   <main class="main-content">
       <div class="login-container">
           <form class="login-form">
@@ -37,12 +42,18 @@
               <input type="text" class="input-field-text" placeholder="Email ou CPF">
               <input type="password" class="input-field-password" placeholder="Senha">
               <a href="recuperar_senha.html" class="forgot-password">Esqueceu sua senha?</a>
-              <button class="entrar">Entrar</button>
+              <button class="entrar" onclick="mensagemEnvio()">Entrar</button>
               <button class="criar_conta"><a href="cadastro.html">Cadastre-se</a></button>
           </form>
       </div>
   </main>
+
   <footer class="footer">
+    <div>
+      <button class="botao_voltar" onclick="voltarParaPagina()">
+        <i class="fa fa-arrow-left"></i><b>voltar</b>
+      </button>
+    </div>
     <div class="footer-container">
       <div class="footer-item"><img src="Imagens_Editado/politica.png"></div>
       <div class="footer-item"><img src="Imagens_Editado/bandeiras_do_cartao.png"></div>
@@ -50,5 +61,6 @@
     </div>
   </footer>
 </body>
+
 <script src="/JS/login.js"></script>
 </html>
