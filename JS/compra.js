@@ -7,9 +7,16 @@ document.addEventListener("DOMContentLoaded", () => {
 function loadCartItems() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartTable = document.querySelector(".tabela_com_os_produtos");
-
+  const wrapper = document.querySelector(".tabela_com_os_produtos-wrapper");
+  
   cartTable.innerHTML = ""; // Limpa a tabela antes de adicionar os novos itens
 
+  if (cart.length === 0) {
+    wrapper.innerHTML = "<p>Seu carrinho está vazio!</p>";
+    return;
+  }
+
+  // Adiciona os itens do carrinho
   cart.forEach((item, index) => {
     const cartItem = document.createElement("tr");
     cartItem.classList.add("cart-item");
@@ -35,8 +42,7 @@ function loadCartItems() {
     cartTable.appendChild(cartItem);
   });
 
-  // Atualizar o total após a inserção dos itens
-  updateTotal();
+  updateTotal(); // Atualizar o total
 }
 
 document.addEventListener("click", function (event) {
@@ -106,6 +112,7 @@ function removeItemFromCart(index) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
   cart.splice(index, 1); // Remove o item com o índice especificado
   localStorage.setItem("cart", JSON.stringify(cart)); // Atualiza o localStorage
+  loadCartItems();
 }
 
 document.addEventListener("input", function (event) {
@@ -147,6 +154,8 @@ if (localStorage.getItem("cart")) {
   loadCartItems();
 }
 
+document.addEventListener("DOMContentLoaded", loadCartItems);
+
 const letras_compras = document.querySelectorAll(".letras_compras");
 letras_compras.forEach((button) => {
   button.addEventListener("click", () => {
@@ -163,6 +172,10 @@ dropdown.addEventListener("click", function () {
     dropdownContenT.style.display = "block";
   }
 });
+
+function pedidoFinalizado() {
+  window.location.href = "pedido_finalizado.html";
+}
 
 function voltarParaPagina() {
   window.location.href = "cardapio.html";

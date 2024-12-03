@@ -67,13 +67,18 @@ main{
     justify-content: space-between;
 }
 .tabela_com_os_produtos{
-    margin-top: 100px;
+    border-collapse: collapse;
+    width: 100%; 
+    max-height: 400px;
+    overflow-y: auto;
     background-color: #ffffff;
-    width: 400px;
     height: 250px;
     border-radius: 25px;
-    padding-top: 20px;
-    padding-left: 20px;
+}
+.tabela_com_os_produtos-wrapper {
+    margin-top: 100px;
+    max-height: 400px; 
+    overflow-y: auto; 
 }
 .dadosItens{
     width: 130px;
@@ -83,14 +88,34 @@ main{
     max-width: 200px;
     max-height: 100px;
 }
-.botoes_compra{
+.botoes_compra {
     background-color: #FF0000;
     width: 320px;
-    height: 250px;
+    height: 280px;
     border-radius: 25px;
-    padding-top: 20px;
-    padding-left: 20px;
+    padding: 20px;
+    padding-top: 30px;
     box-shadow: 20px 15px 10px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.botoes_compra button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #000000; 
+    cursor: pointer;
+    text-align: left;
+}
+.botoes_compra button img {
+    width: 20px;
+    height: 20px;
+    margin-left: auto; 
 }
 main h3{
     font-size: 15px;
@@ -205,6 +230,16 @@ footer{
     margin-bottom: 10px;
     border-radius: 20px;
     gap: 5px;
+    display: flex;
+    padding: 5px;
+    border: solid 1px #000000;
+    background-color: #ffffff;
+    margin-top: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    align-items: center;
+    justify-items: center;
 }
 .footer-container {
     display: flex;
@@ -212,9 +247,5 @@ footer{
 }
 .footer-item{
     width: 70%;
-}
-.image-footer {
-    width: 20%;
-    height: 48px;
 }
 /*Fim do Footer*/

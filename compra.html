@@ -36,22 +36,24 @@
     </header>
 
     <main>
+      <div class="tabela_com_os_produtos-wrapper">
         <table class="tabela_com_os_produtos">
 
         </table>
-        <div class="caixa_compra">
-              <strong class="textoTotal">Total: </strong><span id="totalValue">R$ 0.00</span>
-            <div class="botoes_compra">
-                <button class="letras_compras"><b>PIX</b></button>
-                <button class="letras_compras"><b>Cartão de Débito ou Crédito</b></button>
-                <button class="letras_compras"><b>PayPal</b></button>
-                <button class="letras_compras"><b>Boleto</b></button>
-                <button class="letras_compras"><b>Outro</b></button>
-            </div>
-            <div class="ir_para_finalizacao">
-                <button class="letras_ida_para_finalizacao" onclick="pedido_finalizado.html">Finalizar</button>
-            </div>
-        </div>
+      </div>
+      <div class="caixa_compra">
+            <strong class="textoTotal">Total: </strong><span id="totalValue">R$ 0.00</span>
+          <div class="botoes_compra">
+            <button class="letras_compras"><b>PIX</b><img src="/Imagens_Editado/imagem_pix.png" alt="PIX"></button>
+            <button class="letras_compras"><b>Cartão de Débito ou Crédito</b><img src="/Imagens_Editado/imagem_cartoes.png" alt="Cartão de Débito ou Crédito"></button>
+            <button class="letras_compras"><b>PayPal</b><img src="/Imagens_Editado/imagem_paypal.png" alt="PayPal"></button>
+            <button class="letras_compras"><b>Boleto</b><img src="/Imagens_Editado/imagem_boleto.png" alt="Boleto"></button>
+            <button class="letras_compras"><b>Outro</b><img src="/Imagens_Editado/imagem_outros.png" alt="Outro"></button>
+          </div>
+          <div class="ir_para_finalizacao">
+            <button class="letras_ida_para_finalizacao" onclick="pedidoFinalizado()">Finalizar</button>
+          </div>
+      </div>
     </main>
 
     <footer class="footer">

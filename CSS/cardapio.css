@@ -121,7 +121,6 @@ button{
     cursor: pointer;
     align-items: center;
     justify-items: center;
-
 }
 .carrinho{
     margin-right: 10px;
@@ -147,10 +146,6 @@ footer{
 }
 .footer-item{
     width: 70%;
-}
-.image-footer {
-    width: 20%;
-    height: 48px;
 }
 /*Fim do Footer*/
 /*Início do Responsivo*/

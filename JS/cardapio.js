@@ -31,6 +31,13 @@ document.querySelectorAll('.comprar_item').forEach((button) => {
   });
 });
 
+function addToCart(product) {
+  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Recupera o carrinho
+  cart.push(product); // Adiciona o produto ao carrinho
+  localStorage.setItem("cart", JSON.stringify(cart)); // Atualiza o Local Storage
+  alert(`${product.name} foi adicionado ao carrinho!`);
+}
+
 var dropdown = document.querySelector(".dropdown");
 dropdown.addEventListener("click", function () {
   var dropdownContenT = document.querySelector(".dropdown-content");

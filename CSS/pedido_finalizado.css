@@ -59,9 +59,30 @@ main{
     display: flex;
     justify-content: center;
 }
+.tabela_com_os_produtos{
+    border-collapse: collapse;
+    width: 100%; 
+    max-height: 400px;
+    overflow-y: auto;
+    background-color: #ffffff;
+    height: 250px;
+    border-radius: 25px;
+}
+.tabela_com_os_produtos-wrapper {
+    margin-top: 100px;
+    max-height: 400px; 
+    overflow-y: auto; 
+}
+.dadosItens{
+    width: 130px;
+    padding-bottom: 10px;
+}
+.imagem_do_produto {
+    max-width: 200px;
+    max-height: 100px;
+}
 .botao_finalizado{
     margin-top: 100px;
-    margin-bottom: 500px;
     background-color: #FF0000;
     width: 260px;
     height: 90px;
@@ -110,6 +131,16 @@ footer{
     margin-bottom: 10px;
     border-radius: 20px;
     gap: 5px;
+    display: flex;
+    padding: 5px;
+    border: solid 1px #000000;
+    background-color: #ffffff;
+    margin-top: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    align-items: center;
+    justify-items: center;
 }
 .footer-container {
     display: flex;
@@ -117,10 +148,6 @@ footer{
 }
 .footer-item{
     width: 70%;
-}
-.image-footer {
-    width: 20%;
-    height: 48px;
 }
 /*Fim do Footer*/
 /*Início do Responsivo*/

@@ -168,6 +168,16 @@ footer{
     margin-bottom: 10px;
     border-radius: 20px;
     gap: 5px;
+    display: flex;
+    padding: 5px;
+    border: solid 1px #000000;
+    background-color: #ffffff;
+    margin-top: 15px;
+    padding-right: 15px;
+    font-size: 13px;
+    cursor: pointer;
+    align-items: center;
+    justify-items: center;
 }
 .footer-container {
     display: flex;
@@ -175,10 +185,6 @@ footer{
 }
 .footer-item{
     width: 70%;
-}
-.image-footer {
-    width: 20%;
-    height: 48px;
 }
 /*Fim do Footer*/
 /*Início do Responsivo*/
