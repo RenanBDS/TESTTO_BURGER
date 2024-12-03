@@ -37,15 +37,15 @@
       <form class="formulario_de_entrega">
           <input type="text" class="usuario" placeholder="Nome completo">
           <input type="text" class="usuario" placeholder="E-mail">
-          <input type="text" class="usuario" placeholder="CPF">
+          <input type="number" class="usuario" placeholder="CPF">
           <input type="text" class="usuario" placeholder="Crie uma senha">
-          <input type="text" class="usuario" placeholder="Data de nascimento">
+          <input type="date" class="usuario">
           <input type="text" class="usuario" placeholder="Confirme a senha">
           <div class="telefone">
-            <input type="text" class="ddd" placeholder="DDD">
-            <input type="text" class="celular" placeholder="Celular">
+            <input type="number" class="ddd" placeholder="DDD">
+            <input type="number" class="celular" placeholder="Celular">
           </div>
-          <button class="finalizar">Finalizar</button>
+          <button class="finalizar" onclick="mensagemEnvio()">Finalizar</button>
           <button class="ja_tem_conta"><a href="login.html">Já tem uma conta?</a></button>
       </form>
   </div>

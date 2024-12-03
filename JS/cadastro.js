@@ -7,3 +7,14 @@ dropdown.addEventListener("click", function () {
     dropdownContenT.style.display = "block";
   }
 });
+
+function mensagemEnvio(){
+  alert("Cadastro feito com sucesso!");
+  const campoUsuario = document.querySelector('.usuario');
+  const campoDDD = document.querySelector('.ddd');
+  const campoCelular = document.querySelector('.celular');
+
+  campoUsuario.value = '';
+  campoDDD.value = '';
+  campoCelular.value = '';
+}

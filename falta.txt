@@ -1,0 +1,10 @@
+entrega.html -> Renan
+login.html -> Renan
+recuperar_senha.html -> Renan
+
+compra.html(tentar fazer o overflow-y) -> Renan
+
+pedido_finalizado.html(passar os produtos para essa tela) -> Renan
+
+index.html -> André
+arrumar as imagens -> André

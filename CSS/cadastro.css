@@ -76,6 +76,17 @@ main{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, auto);
 }
+/* Remove as flechinhas (spinners) no Chrome, Safari, Edge, e outros navegadores baseados em WebKit */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Remove as flechinhas no Firefox */
+input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+    appearance: textfield;
+}
 .usuario{
     /*font-family: Montserrat; Fonte não existe*/
     font-size: 28px;
