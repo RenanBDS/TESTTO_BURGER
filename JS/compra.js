@@ -42,7 +42,7 @@ function loadCartItems() {
               )}</em></h4>
               <div class="quant_item">
                 <div class="quantidade-container">
-                  <img src="Imagens_Editado/imagem_carrinho.png" class="carrinho">
+                  <img src="./Imagens_Editado/imagem_carrinho.png" class="carrinho">
                   <button class="quantidade-btn" data-action="decrement" data-index="${index}">-</button>
                   <input type="number" class="quantidade-input" value="${
                     item.quantity
