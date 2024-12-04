@@ -1,6 +1,8 @@
-prender todos os footers -> Renan
-pedido_finalizado.html(Finalizar o CSS e bloquear as interações de usuário) -> Renan
-reponsividade(index, compra, pedido_finalizado) -> Renan (Obs: Arrumar todos os rodapés dos sites)
-conferir os botões volta -> Renan
+bugs console -> Renan
+bugs de não estar recalculando automático -> Renan
+reponsividade do cardapio.html -> Renan
+Arrumar todos os headers e footers dos sites -> Renan
 
-arrumar as imagens -> André
+trocar a logo do twitter -> André
+
+reponsividade(index) ???????

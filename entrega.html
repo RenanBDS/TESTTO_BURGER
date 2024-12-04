@@ -1,72 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <title>Entrega</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="/CSS/entrega.css">
-</head>
+  <head>
+    <title>Entrega</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/entrega.css" />
+  </head>
 
-<body class="bg-image">
-  <header>
-    <div class="dropdown">
-      <button class="dropbtn">☰</button>
-      <div class="dropdown-content">
-        <a href="index.html">Home</a>
-        <a href="cardapio.html">Cardápio</a>
-        <a href="localizacao.html">Localização</a>
-        <a href="entrega.html">Endereço de Entrega</a>
+  <body class="bg-image">
+    <header>
+      <div class="dropdown">
+        <button class="dropbtn">☰</button>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="cardapio.html">Cardápio</a>
+          <a href="localizacao.html">Localização</a>
+          <a href="entrega.html">Endereço de Entrega</a>
+        </div>
       </div>
-    </div>
-    <div>
-      <img src="/Imagens_Editado/logo_fitness_branca.png" alt="Logo Branca" class="logo">
-    </div>
-    <div class="menu-pesquisa"> 
-      <form action="#" method="post">
-        <input type="text" name="search" id="search" placeholder="Faça sua busca">
-      </form>
-      <a href="login.html" class="onclick_header">          
-        <i class="fa fa-user-o" aria-hidden="true"></i>
-      </a>
-      <a href="compra.html" class="onclick_header">
-        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-      </a>
-    </div>
-  </header>
+      <div>
+        <img
+          src="/Imagens_Editado/logo_fitness_branca.png"
+          alt="Logo Branca"
+          class="logo"
+        />
+      </div>
+      <div class="menu-pesquisa">
+        <form action="#" method="post">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Faça sua busca"
+          />
+        </form>
+        <a href="login.html" class="onclick_header">
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+        </a>
+        <a href="compra.html" class="onclick_header">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </a>
+      </div>
+    </header>
 
-  <main>
-    <div class="container_entrega">
-      <h2>Endereço de Entrega</h2>
-      <form class="formulario_de_entrega">
-          <input type="text" class="usuario" placeholder="Nome completo">
-          <input type="text" class="usuario" placeholder="Bairro">
-          <input type="text" class="usuario" placeholder="Rua">
-          <input type="text" class="usuario" placeholder="Cidade">
-          <input type="number" class="usuario" placeholder="Cep">
-          <input type="text" class="usuario" placeholder="Complemento">
+    <main>
+      <div class="container_entrega">
+        <h2>Endereço de Entrega</h2>
+        <form class="formulario_de_entrega">
+          <input type="text" class="usuario" placeholder="Nome completo" />
+          <input type="text" class="usuario" placeholder="Bairro" />
+          <input type="text" class="usuario" placeholder="Rua" />
+          <input type="text" class="usuario" placeholder="Cidade" />
+          <input type="number" class="usuario" placeholder="Cep" />
+          <input type="text" class="usuario" placeholder="Complemento" />
           <div class="telefone">
-            <input type="number" class="ddd" placeholder="DDD">
-            <input type="number" class="celular" placeholder="Celular">
+            <input type="number" class="ddd" placeholder="DDD" />
+            <input type="number" class="celular" placeholder="Celular" />
           </div>
           <button class="finalizar" onclick="mensagemEnvio()">Finalizar</button>
-      </form>
-  </div>
-  </main>
+        </form>
+      </div>
+    </main>
 
-  <footer class="footer">
-    <div>
-      <button class="botao_voltar" onclick="voltarParaPagina()">
-        <i class="fa fa-arrow-left"></i><b>voltar</b>
-      </button>
-    </div>
-    <div class="footer-container">
-      <div class="footer-item"><img src="Imagens_Editado/politica.png"></div>
-      <div class="footer-item"><img src="Imagens_Editado/bandeiras_do_cartao.png"></div>
-      <div class="footer-item"><img src="Imagens_Editado/redes_socias.png"></div>
-    </div>
-  </footer>
-</body>
+    <footer class="footer">
+      <div>
+        <button class="botao_voltar" onclick="voltarParaPagina()">
+          <i class="fa fa-arrow-left"></i><b>voltar</b>
+        </button>
+      </div>
+      <div class="footer-container">
+        <div class="footer-item">
+          <img src="Imagens_Editado/politica.png" />
+        </div>
+        <div class="footer-item">
+          <img src="Imagens_Editado/bandeiras_do_cartao.png" />
+        </div>
+        <div class="footer-item">
+          <img src="Imagens_Editado/redes_socias.png" />
+        </div>
+      </div>
+    </footer>
+  </body>
 
-<script src="/JS/entrega.js"></script>
+  <script src="/JS/entrega.js"></script>
 </html>

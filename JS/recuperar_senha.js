@@ -15,6 +15,6 @@ function mensagemEnvio() {
   campoUsuario.value = "";
 }
 
-function voltarParaPagina(){
+function voltarParaPagina() {
   window.location.href = "login.html";
 }

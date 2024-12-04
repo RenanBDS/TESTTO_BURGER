@@ -1,74 +1,113 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <title>Carrinho</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/CSS/compra.css">
-</head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/CSS/compra.css" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="dropdown">
-          <button class="dropbtn">☰</button>
-          <div class="dropdown-content">
-            <a href="index.html">Home</a>
-            <a href="cardapio.html">Cardápio</a>
-            <a href="localizacao.html">Localização</a>
-            <a href="entrega.html">Endereço de Entrega</a>
-          </div>
+      <div class="dropdown">
+        <button class="dropbtn">☰</button>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="cardapio.html">Cardápio</a>
+          <a href="localizacao.html">Localização</a>
+          <a href="entrega.html">Endereço de Entrega</a>
         </div>
-        <div>
-            <img src="/Imagens_Editado/logo_fitness_branca.png" alt="Logo Branca" class="logo">
-        </div>
-        <div class="menu-pesquisa"> 
-          <form action="#" method="post">
-            <input type="text" name="search" id="search" placeholder="Faça sua busca">
-          </form>
-          <a href="login.html" class="onclick_header">          
-            <i class="fa fa-user-o" aria-hidden="true"></i>
-          </a>
-          <a href="compra.html" class="onclick_header">
-            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-          </a>
-        </div>
+      </div>
+      <div>
+        <img
+          src="/Imagens_Editado/logo_fitness_branca.png"
+          alt="Logo Branca"
+          class="logo"
+        />
+      </div>
+      <div class="menu-pesquisa">
+        <form action="#" method="post">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="Faça sua busca"
+          />
+        </form>
+        <a href="login.html" class="onclick_header">
+          <i class="fa fa-user-o" aria-hidden="true"></i>
+        </a>
+        <a href="compra.html" class="onclick_header">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        </a>
+      </div>
     </header>
 
     <main>
       <div class="tabela_com_os_produtos-wrapper">
-        <table class="tabela_com_os_produtos">
-
-        </table>
+        <table class="tabela_com_os_produtos"></table>
       </div>
       <div class="caixa_compra">
-            <strong class="textoTotal">Total: </strong><span id="totalValue">R$ 0.00</span>
-          <div class="botoes_compra">
-            <button class="letras_compras"><b>PIX</b><img src="/Imagens_Editado/imagem_pix.png" alt="PIX"></button>
-            <button class="letras_compras"><b>Cartão de Débito ou Crédito</b><img src="/Imagens_Editado/imagem_cartoes.png" alt="Cartão de Débito ou Crédito"></button>
-            <button class="letras_compras"><b>PayPal</b><img src="/Imagens_Editado/imagem_paypal.png" alt="PayPal"></button>
-            <button class="letras_compras"><b>Boleto</b><img src="/Imagens_Editado/imagem_boleto.png" alt="Boleto"></button>
-            <button class="letras_compras"><b>Outro</b><img src="/Imagens_Editado/imagem_outros.png" alt="Outro"></button>
-          </div>
-          <div class="ir_para_finalizacao">
-            <button class="letras_ida_para_finalizacao" onclick="pedidoFinalizado()">Finalizar</button>
-          </div>
+        <strong class="textoTotal">Total: </strong
+        ><span id="totalValue">R$ 0.00</span>
+        <div class="botoes_compra">
+          <button class="letras_compras">
+            <b>PIX</b><img src="/Imagens_Editado/imagem_pix.png" alt="PIX" />
+          </button>
+          <button class="letras_compras">
+            <b>Cartão de Débito ou Crédito</b
+            ><img
+              src="/Imagens_Editado/imagem_cartoes.png"
+              alt="Cartão de Débito ou Crédito"
+            />
+          </button>
+          <button class="letras_compras">
+            <b>PayPal</b
+            ><img src="/Imagens_Editado/imagem_paypal.png" alt="PayPal" />
+          </button>
+          <button class="letras_compras">
+            <b>Boleto</b
+            ><img src="/Imagens_Editado/imagem_boleto.png" alt="Boleto" />
+          </button>
+          <button class="letras_compras">
+            <b>Outro</b
+            ><img src="/Imagens_Editado/imagem_outros.png" alt="Outro" />
+          </button>
+        </div>
+        <div class="ir_para_finalizacao">
+          <button
+            class="letras_ida_para_finalizacao"
+            onclick="pedidoFinalizado()"
+          >
+            Finalizar
+          </button>
+        </div>
       </div>
     </main>
 
     <footer class="footer">
-        <div>
-            <button class="botao_voltar" onclick="voltarParaPagina()">
-                <i class="fa fa-arrow-left"></i><b>voltar</b>
-          </button>
+      <div>
+        <button class="botao_voltar" onclick="voltarParaPagina()">
+          <i class="fa fa-arrow-left"></i><b>voltar</b>
+        </button>
+      </div>
+      <div class="footer-container">
+        <div class="footer-item">
+          <img src="Imagens_Editado/politica.png" />
         </div>
-        <div class="footer-container">
-          <div class="footer-item"><img src="Imagens_Editado/politica.png"></div>
-          <div class="footer-item"><img src="Imagens_Editado/bandeiras_do_cartao.png"></div>
-          <div class="footer-item"><img src="Imagens_Editado/redes_socias.png"></div>
+        <div class="footer-item">
+          <img src="Imagens_Editado/bandeiras_do_cartao.png" />
         </div>
+        <div class="footer-item">
+          <img src="Imagens_Editado/redes_socias.png" />
+        </div>
+      </div>
     </footer>
-</body>
+  </body>
 
-<script src="/JS/compra.js" async></script>
+  <script src="/JS/compra.js" async></script>
 </html>

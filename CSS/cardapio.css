@@ -1,184 +1,198 @@
 /*Início do Geral*/
-*{
-    margin: 0;
-    padding: 0;
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 /*Fim do Geral*/
 /*Início do Header*/
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    background: #FF0000;
-    padding: 0 20px;
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background: #ff0000;
+  padding: 0 20px;
 }
 .dropbtn {
-    background-color: #FF0000;
-    color: white;
-    font-size: 40px;
-    border: none;
-    max-height: 40px;
-    margin-left: 10px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 40px;
+  border: none;
+  max-height: 40px;
+  margin-left: 10px;
 }
 .dropdown {
-    height: 60px;
-    display: inline-block;
+  height: 60px;
+  display: inline-block;
 }
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #FF0000;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #ff0000;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-} 
-.logo{
-    padding-left: 10px;
-    width: 50px;
-    height: 50px;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.logo {
+  padding-left: 10px;
+  width: 50px;
+  height: 50px;
 }
 .menu-pesquisa {
-    display: flex;
-    gap: 10px;
-    margin-left: auto;
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
 }
-.onclick_header{
-    color: #ffffff;
-    text-decoration: none;
+.onclick_header {
+  color: #ffffff;
+  text-decoration: none;
 }
 /*Fim do Header*/
 /*Início do Main*/
-main{
-    display: flex;
-    justify-content: center;
-    width: full;
-    padding-top: 10px;
-    padding-bottom: 10px;
+main {
+  display: flex;
+  justify-content: center;
+  width: full;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-.logo_preta{
-    display: flex;
-    position: absolute;
-    padding-left: 10px;
+.logo_preta {
+  display: flex;
+  position: absolute;
+  padding-left: 10px;
 }
-.testto_clasic{
-    display: flex;
-    justify-content: center;
+.testto_clasic {
+  display: flex;
+  justify-content: center;
 }
-.testto_frango{
-    display: flex;
-    justify-content: center;
+.testto_frango {
+  display: flex;
+  justify-content: center;
 }
-.duplo_anabolic{
-    display: flex;
-    justify-content: center;
+.duplo_anabolic {
+  display: flex;
+  justify-content: center;
 }
-.testto_bacon{
-    display: flex;
-    justify-content: center;
+.testto_bacon {
+  display: flex;
+  justify-content: center;
 }
-.batata_bacon{
-    display: flex;
-    justify-content: center;
+.batata_bacon {
+  display: flex;
+  justify-content: center;
+  margin-right: 10px;
 }
-.suco_natural{
-    display: flex;
-    justify-content: center;
+.suco_natural {
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
 }
-.linhas{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.linhas {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-main h3{
-    font-size: 25px;
-    margin-bottom: 10px;
+main h3 {
+  font-size: 25px;
+  margin-bottom: 10px;
 }
-main h6{
-    font-family: 'Light';
-    font-size: 16px;
+main h6 {
+  font-family: "Light";
+  font-size: 16px;
 }
-main h4{
-    font-family: 'Poppins';
-    font-size: 30px;
-    margin-top: 10px;
+main h4 {
+  font-family: "Poppins";
+  font-size: 30px;
+  margin-top: 10px;
 }
-button{
-    display: flex;
-    padding: 5px;
-    border: solid 1px #000000;
-    border-radius: 5px;
-    background-color: #ffffff;
-    margin-top: 15px;
-    padding-right: 15px;
-    font-size: 13px;
-    cursor: pointer;
-    align-items: center;
-    justify-items: center;
+button {
+  display: flex;
+  padding: 5px;
+  border: solid 1px #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  margin-top: 15px;
+  padding-right: 15px;
+  font-size: 13px;
+  cursor: pointer;
+  align-items: center;
+  justify-items: center;
 }
-.carrinho{
-    margin-right: 10px;
-    width: 20px;
-    height: 20px;
+.carrinho {
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
 }
 /*Fim do Main*/
 /*Início do Footer*/
-footer{
-    padding: 30px;
-    width: full;
-    background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    height: 110px;
+footer {
+  padding: 30px;
+  width: full;
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
+  height: 110px;
+  margin-top: auto;
 }
-.botao_voltar{
-    margin-bottom: 10px;
-    border-radius: 20px;
-    gap: 5px;
+.botao_voltar {
+  margin-bottom: 10px;
+  border-radius: 20px;
+  gap: 5px;
 }
 .footer-container {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
-.footer-item{
-    width: 70%;
+.footer-item {
+  width: 70%;
 }
 /*Fim do Footer*/
 /*Início do Responsivo*/
-@media all and (max-width: 1550px){
-    .linhas{
-        display: block;
-        align-items: center;
-    }
+@media all and (max-width: 1550px) {
+  .linhas {
+    display: block;
+    align-items: center;
+  }
 }
-@media all and (max-width: 850px){
-    .testto_clasic{
-        display: block;
-        align-items: center;
-    }
-    .testto_frango{
-        display: block;
-        align-items: center;
-    }
-    .duplo_anabolic{
-        display: block;
-        align-items: center;
-    }
-    .testto_bacon{
-        display: block;
-        align-items: center;
-    }
-    .batata_bacon{
-        display: block;
-        align-items: center;
-    }
-    .suco_natural{
-        display: block;
-        align-items: center;
-    }
+@media all and (max-width: 850px) {
+  .testto_clasic {
+    display: block;
+    align-items: center;
+  }
+  .testto_frango {
+    display: block;
+    align-items: center;
+  }
+  .duplo_anabolic {
+    display: block;
+    align-items: center;
+  }
+  .testto_bacon {
+    display: block;
+    align-items: center;
+  }
+  .batata_bacon {
+    display: block;
+    align-items: center;
+  }
+  .suco_natural {
+    display: block;
+    align-items: center;
+  }
 }
 /*Fim do Responsivo*/

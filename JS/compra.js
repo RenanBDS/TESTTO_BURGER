@@ -8,7 +8,7 @@ function loadCartItems() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartTable = document.querySelector(".tabela_com_os_produtos");
   const wrapper = document.querySelector(".tabela_com_os_produtos-wrapper");
-  
+
   cartTable.innerHTML = ""; // Limpa a tabela antes de adicionar os novos itens
 
   if (cart.length === 0) {
@@ -22,16 +22,22 @@ function loadCartItems() {
     cartItem.classList.add("cart-item");
     cartItem.innerHTML = `
           <div class="ajuste">
-            <img src="${item.image}" alt="${item.name}" class="imagem_do_produto">
+            <img src="${item.image}" alt="${
+      item.name
+    }" class="imagem_do_produto">
             <div class="dadosItens">
               <h3 class="nome_do_produto"><strong>${item.name}</strong></h3>
               <h6 class="descricao"><em>${item.descricao}</em></h6>
-              <h4 class="preco_do_produto"><em>R$ ${item.price.toFixed(2)}</em></h4>
+              <h4 class="preco_do_produto"><em>R$ ${item.price.toFixed(
+                2
+              )}</em></h4>
               <div class="quant_item">
                 <div class="quantidade-container">
                   <img src="Imagens_Editado/imagem_carrinho.png" class="carrinho">
                   <button class="quantidade-btn" data-action="decrement" data-index="${index}">-</button>
-                  <input type="number" class="quantidade-input" value="${item.quantity}" min="0" data-index="${index}">
+                  <input type="number" class="quantidade-input" value="${
+                    item.quantity
+                  }" min="0" data-index="${index}">
                   <button class="quantidade-btn" data-action="increment" data-index="${index}">+</button>
                 </div>
               </div>
@@ -157,9 +163,15 @@ if (localStorage.getItem("cart")) {
 document.addEventListener("DOMContentLoaded", loadCartItems);
 
 const letras_compras = document.querySelectorAll(".letras_compras");
+
 letras_compras.forEach((button) => {
   button.addEventListener("click", () => {
-    button.classList.toggle("verde");
+    if (button.classList.contains("verde")) {
+      button.classList.remove("verde");
+    } else {
+      letras_compras.forEach((btn) => btn.classList.remove("verde"));
+      button.classList.add("verde");
+    }
   });
 });
 
@@ -174,6 +186,21 @@ dropdown.addEventListener("click", function () {
 });
 
 function pedidoFinalizado() {
+  const selectedPayment = document.querySelector(".letras_compras.verde");
+  if (!selectedPayment) {
+    alert(
+      "Por favor, escolha uma forma de pagamento antes de finalizar a compra."
+    );
+    return;
+  }
+  const total = parseFloat(
+    document.querySelector("#totalValue").innerText.replace("R$", "").trim()
+  );
+  if (total == 0) {
+    alert("Carrinho vazio, adicione algum item!");
+    return;
+  }
+  alert("Pagemento bem sucedido!");
   window.location.href = "pedido_finalizado.html";
 }
 
