@@ -55,6 +55,10 @@ header {
   gap: 10px;
   margin-left: auto;
 }
+.pesquisa {
+  width: 100px;
+  border-radius: 5px;
+}
 .onclick_header {
   color: #ffffff;
   text-decoration: none;
@@ -67,7 +71,7 @@ main {
   overflow-y: auto;
 }
 .bg-image {
-  background-image: url("/Imagens_Editado/fundo_index.jpg");
+  background-image: url("/Imagens_Editado/fundo_index.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 20%;
@@ -98,5 +102,78 @@ footer {
 /*Fim do Footer*/
 /*Início do Responsivo*/
 @media all and (max-width: 1050px) {
+  footer {
+    padding: 0px;
+    margin-left: 35%;
+  }
+  .botao_voltar {
+    margin-left: 15%;
+  }
+  .footer-container {
+    display: inline-block;
+  }
+  .footer-item {
+    margin-bottom: 20px;
+  }
+}
+@media all and (max-width: 500px) {
+  footer {
+    padding: 0px;
+    margin-left: 25%;
+  }
+  .botao_voltar {
+    margin-left: 15%;
+  }
+  .footer-container {
+    display: inline-block;
+  }
+}
+@media all and (max-width: 500px) {
+  footer {
+    padding: 0px;
+    margin-left: 25%;
+  }
+  .botao_voltar {
+    margin-left: 15%;
+  }
+  .footer-container {
+    display: inline-block;
+  }
+}
+@media all and (max-width: 400px) {
+  footer {
+    padding: 0px;
+    margin-left: 20%;
+  }
+  .botao_voltar {
+    margin-left: 15%;
+  }
+  .footer-container {
+    display: inline-block;
+  }
+}
+@media all and (max-width: 360px) {
+  footer {
+    padding: 0px;
+    margin-left: 15%;
+  }
+  .botao_voltar {
+    margin-left: 15%;
+  }
+  .footer-container {
+    display: inline-block;
+  }
+}
+@media all and (max-width: 320px) {
+  footer {
+    padding: 0px;
+    margin-left: 10%;
+  }
+  .botao_voltar {
+    margin-left: 15%;
+  }
+  .footer-container {
+    display: inline-block;
+  }
 }
 /*Fim do Responsivo*/

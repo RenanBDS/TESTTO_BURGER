@@ -9,11 +9,24 @@ function loadCartItems() {
   const cartTable = document.querySelector(".tabela_com_os_produtos");
   const wrapper = document.querySelector(".tabela_com_os_produtos-wrapper");
 
-  cartTable.innerHTML = ""; // Limpa a tabela antes de adicionar os novos itens
+  // Limpa a tabela, mas mantém o elemento no DOM
+  cartTable.innerHTML = "";
 
   if (cart.length === 0) {
-    wrapper.innerHTML = "<p>Seu carrinho está vazio!</p>";
+    // Exibe a mensagem sem remover a tabela
+    if (!document.querySelector(".empty-cart-message")) {
+      const emptyMessage = document.createElement("p");
+      emptyMessage.classList.add("empty-cart-message");
+      emptyMessage.textContent = "Seu carrinho está vazio!";
+      wrapper.appendChild(emptyMessage);
+    }
     return;
+  }
+
+  // Remove a mensagem de carrinho vazio, se existir
+  const emptyMessage = document.querySelector(".empty-cart-message");
+  if (emptyMessage) {
+    emptyMessage.remove();
   }
 
   // Adiciona os itens do carrinho

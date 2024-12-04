@@ -1,7 +1,4 @@
-bugs console -> Renan
-bugs de não estar recalculando automático -> Renan
-reponsividade do cardapio.html -> Renan
-Arrumar todos os headers e footers dos sites -> Renan
+Arrumar o footer do index!!!!!! -> Renan
 
 trocar a logo do twitter -> André
 
