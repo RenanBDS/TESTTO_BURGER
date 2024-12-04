@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM completamente carregado!");
-  loadCartItems(); // Carrega os itens do carrinho
-  updateTotal(); // Atualiza o total
+  loadCartItems();
+  updateTotal();
 });
 
 function loadCartItems() {
@@ -9,11 +9,9 @@ function loadCartItems() {
   const cartTable = document.querySelector(".tabela_com_os_produtos");
   const wrapper = document.querySelector(".tabela_com_os_produtos-wrapper");
 
-  // Limpa a tabela, mas mantém o elemento no DOM
   cartTable.innerHTML = "";
 
   if (cart.length === 0) {
-    // Exibe a mensagem sem remover a tabela
     if (!document.querySelector(".empty-cart-message")) {
       const emptyMessage = document.createElement("p");
       emptyMessage.classList.add("empty-cart-message");
@@ -23,13 +21,11 @@ function loadCartItems() {
     return;
   }
 
-  // Remove a mensagem de carrinho vazio, se existir
   const emptyMessage = document.querySelector(".empty-cart-message");
   if (emptyMessage) {
     emptyMessage.remove();
   }
 
-  // Adiciona os itens do carrinho
   cart.forEach((item, index) => {
     const cartItem = document.createElement("tr");
     cartItem.classList.add("cart-item");
@@ -61,57 +57,52 @@ function loadCartItems() {
     cartTable.appendChild(cartItem);
   });
 
-  updateTotal(); // Atualizar o total
+  updateTotal();
 }
 
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("quantidade-btn")) {
-    const index = event.target.dataset.index; // Obtém o índice do item
-    const action = event.target.dataset.action; // Obtém a ação (increment ou decrement)
+    const index = event.target.dataset.index;
+    const action = event.target.dataset.action;
 
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    if (!cart[index]) return; // Verifica se o item existe no carrinho
+    if (!cart[index]) return;
 
     if (action === "increment") {
-      cart[index].quantity += 1; // Incrementa a quantidade
+      cart[index].quantity += 1;
     } else if (action === "decrement" && cart[index].quantity > 1) {
-      cart[index].quantity -= 1; // Decrementa a quantidade (mínimo 1)
+      cart[index].quantity -= 1;
     } else if (action === "decrement" && cart[index].quantity === 1) {
-      // Remove o item se a quantidade for 1 e o botão de decremento for pressionado
       cart.splice(index, 1);
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart)); // Atualiza o localStorage
-    loadCartItems(); // Recarrega os itens no DOM
-    updateTotal(); // Recalcula o total
+    localStorage.setItem("cart", JSON.stringify(cart));
+    loadCartItems();
+    updateTotal();
   }
 });
 
 document.addEventListener("input", function (event) {
   if (event.target.classList.contains("quantidade-input")) {
-    const index = event.target.dataset.index; // Índice do item no carrinho
-    const newQuantity = parseInt(event.target.value); // Nova quantidade
+    const index = event.target.dataset.index;
+    const newQuantity = parseInt(event.target.value);
 
     if (isNaN(newQuantity) || newQuantity <= 0) {
-      // Se a quantidade for inválida ou zero, remove o item
       removeItemFromCart(index);
     } else {
-      // Caso contrário, atualiza a quantidade
       updateItemQuantity(index, newQuantity);
     }
 
-    loadCartItems(); // Recarregar os itens
-    updateTotal(); // Recalcular o total
+    loadCartItems();
+    updateTotal();
   }
 });
 
 function setupCartListeners() {
-  // Adiciona um ouvinte para o botão "Remover" de cada produto
   document.querySelectorAll(".remove-product-button").forEach((button) => {
     button.addEventListener("click", removeProduct);
   });
 
-  // Adiciona um ouvinte para os campos de quantidade dos produtos
   document.querySelectorAll(".product-qtd-input").forEach((input) => {
     input.addEventListener("change", updateQuantity);
   });
@@ -119,36 +110,34 @@ function setupCartListeners() {
 
 document.addEventListener("click", function (event) {
   if (event.target.classList.contains("remove-product-button")) {
-    const index = event.target.dataset.index; // Índice do item a ser removido
+    const index = event.target.dataset.index;
     removeItemFromCart(index);
-    loadCartItems(); // Recarregar os itens do carrinho na página
-    updateTotal(); // Recalcular o total após a remoção
+    loadCartItems();
+    updateTotal();
   }
 });
 
-// Função para remover o item do carrinho no localStorage
 function removeItemFromCart(index) {
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  cart.splice(index, 1); // Remove o item com o índice especificado
-  localStorage.setItem("cart", JSON.stringify(cart)); // Atualiza o localStorage
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
   loadCartItems();
 }
 
 document.addEventListener("input", function (event) {
   if (event.target.classList.contains("product-qtd-input")) {
-    const index = event.target.dataset.index; // Índice do item no carrinho
-    const newQuantity = parseInt(event.target.value); // Nova quantidade
+    const index = event.target.dataset.index;
+    const newQuantity = parseInt(event.target.value);
     updateItemQuantity(index, newQuantity);
-    updateTotal(); // Recalcular o total após a alteração
+    updateTotal();
   }
 });
 
-// Função para atualizar a quantidade no localStorage
 function updateItemQuantity(index, quantity) {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   if (cart[index]) {
     cart[index].quantity = quantity;
-    localStorage.setItem("cart", JSON.stringify(cart)); // Salvar novamente no localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
   }
 }
 
@@ -165,10 +154,8 @@ function updateTotal() {
 }
 
 if (localStorage.getItem("cart")) {
-  // Se o carrinho já estiver salvo, ele será carregado corretamente
   loadCartItems();
 } else {
-  // Caso contrário, o carrinho começa vazio
   console.log("Carrinho vazio, carregando inicial...");
   loadCartItems();
 }

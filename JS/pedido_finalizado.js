@@ -1,16 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("DOM completamente carregado!");
-  loadCartItems(); // Carrega os itens do carrinho
-  updateTotal(); // Atualiza o total
+  loadCartItems();
+  updateTotal();
 });
 
 function loadCartItems() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const cartTable = document.querySelector(".tabela_com_os_produtos");
 
-  cartTable.innerHTML = ""; // Limpa a tabela antes de adicionar os novos itens
+  cartTable.innerHTML = ""; 
 
-  // Adiciona os itens do carrinho
   cart.forEach((item, index) => {
     const cartItem = document.createElement("tr");
     cartItem.classList.add("cart-item");
@@ -37,7 +36,7 @@ function loadCartItems() {
     cartTable.appendChild(cartItem);
   });
 
-  updateTotal(); // Atualizar o total
+  updateTotal();
 }
 
 function updateTotal() {

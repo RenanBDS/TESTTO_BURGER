@@ -4,10 +4,17 @@ body {
   height: 100%;
   margin: 0;
 }
-
 body {
   display: flex;
   flex-direction: column;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(/Texturas_Letras/poppins.zip);
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/Texturas_Letras/Montserrat.zip);
 }
 /*Fim do Geral*/
 /*Início do Header*/
@@ -82,7 +89,7 @@ main {
   box-shadow: 15px 20px 5px #e0e3e5;
 }
 .container_cadastro h2 {
-  /*font-family: Poppins; Fonte não existe*/
+  font-family: 'Poppins';
   font-size: 48px;
   color: white;
   text-align: center;
@@ -93,19 +100,17 @@ main {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(4, auto);
 }
-/* Remove as flechinhas (spinners) no Chrome, Safari, Edge, e outros navegadores baseados em WebKit */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* Remove as flechinhas no Firefox */
 input[type="number"] {
-  -moz-appearance: textfield; /* Firefox */
+  -moz-appearance: textfield;
   appearance: textfield;
 }
 .usuario {
-  /*font-family: Montserrat; Fonte não existe*/
+  font-family: 'Montserrat'; 
   font-size: 28px;
   color: #000000b3;
   padding: 10px;
@@ -121,7 +126,7 @@ input[type="number"] {
   margin-left: 80px;
 }
 .ddd {
-  /*font-family: Montserrat; Fonte não existe*/
+  font-family: 'Montserrat'; 
   font-size: 32px;
   color: #000000b3;
   padding: 10px;
@@ -132,7 +137,7 @@ input[type="number"] {
   width: 132px;
 }
 .celular {
-  /*font-family: Montserrat; Fonte não existe*/
+  font-family: 'Montserrat'; 
   font-size: 32px;
   color: #000000b3;
   padding: 10px;
@@ -143,7 +148,7 @@ input[type="number"] {
   width: 318px;
 }
 .finalizar {
-  /*font-family: Poppins; Fonte não existe*/
+  font-family: 'Poppins';
   background-color: #e0e3e5;
   font-size: 35px;
   border: none;
@@ -156,7 +161,7 @@ input[type="number"] {
   margin-bottom: 70px;
 }
 .ja_tem_conta {
-  /*font-family: Montserrat; Fonte não existe*/
+  font-family: 'Montserrat'; 
   font-size: 32px;
   grid-column: 2;
   background-color: #ff0000;

@@ -9,35 +9,32 @@ document.querySelectorAll(".comprar_item").forEach((button) => {
     const productPrice =
       productElement.querySelector(".preco_do_produto").innerText;
 
-    // Converter o preço para número
     const product = {
       image: productImage,
       name: productName,
       descricao: productDescricao,
-      price: parseFloat(productPrice.replace("R$", "").trim()), // Converte o preço para número
+      price: parseFloat(productPrice.replace("R$", "").trim()),
       quantity: 1,
     };
 
-    // Recuperar carrinho existente
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Verificar se o produto já está no carrinho
     const existingProductIndex = cart.findIndex((p) => p.name === product.name);
     if (existingProductIndex > -1) {
-      cart[existingProductIndex].quantity += 1; // Incrementa a quantidade
+      cart[existingProductIndex].quantity += 1;
     } else {
-      cart.push(product); // Adiciona novo produto
+      cart.push(product);
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart)); // Salva no localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
     alert(`${product.name} foi adicionado ao carrinho!`);
   });
 });
 
 function addToCart(product) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || []; // Recupera o carrinho
-  cart.push(product); // Adiciona o produto ao carrinho
-  localStorage.setItem("cart", JSON.stringify(cart)); // Atualiza o Local Storage
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  cart.push(product);
+  localStorage.setItem("cart", JSON.stringify(cart));
   alert(`${product.name} foi adicionado ao carrinho!`);
 }
 

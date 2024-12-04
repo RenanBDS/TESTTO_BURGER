@@ -4,10 +4,13 @@ body {
   height: 100%;
   margin: 0;
 }
-
 body {
   display: flex;
   flex-direction: column;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/Texturas_Letras/Montserrat.zip);
 }
 /*Fim do Geral*/
 /*Início do Header*/
@@ -115,16 +118,14 @@ main h4 {
   border: none;
   width: 10px;
 }
-/* Remove os spinners do campo de número no Chrome, Safari e Edge */
 .quantidade-input::-webkit-inner-spin-button,
 .quantidade-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* Remove os spinners no Firefox */
 .quantidade-input {
-  -moz-appearance: textfield; /* Firefox */
-  -webkit-appearance: textfield; /* Chrome, Safari */
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
   appearance: textfield;
 }
 .textoTotal {
@@ -145,7 +146,7 @@ main h4 {
   padding: 5px;
   border-radius: 5px;
   background-color: #ffffff;
-  /*font-family: Montserrat; NÃO TEM*/
+  font-family: 'Montserrat';
 }
 .acompanhar_pedido {
   width: 130px;

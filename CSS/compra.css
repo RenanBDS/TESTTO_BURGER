@@ -4,10 +4,13 @@ body {
   height: 100%;
   margin: 0;
 }
-
 body {
   display: flex;
   flex-direction: column;
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/Texturas_Letras/Montserrat.zip);
 }
 /*Fim do Geral*/
 /*Início do Header*/
@@ -165,16 +168,14 @@ main h4 {
   border: none;
   cursor: pointer;
 }
-/* Remove os spinners do campo de número no Chrome, Safari e Edge */
 .quantidade-input::-webkit-inner-spin-button,
 .quantidade-input::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-/* Remove os spinners no Firefox */
 .quantidade-input {
-  -moz-appearance: textfield; /* Firefox */
-  -webkit-appearance: textfield; /* Chrome, Safari */
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
   appearance: textfield;
 }
 .carrinho {
@@ -201,6 +202,7 @@ main h4 {
 }
 .letras_compras {
   display: flex;
+  font-family: 'Montserrat';
   width: 320px;
   padding: 5px;
   padding-top: 10px;
@@ -210,7 +212,6 @@ main h4 {
   background-color: #ffffff;
   color: #060606;
   border-width: 1px;
-  /*font-family: Montserrat; NÃO TEM*/
 }
 .letras_compras.verde {
   background-color: #00ff00;

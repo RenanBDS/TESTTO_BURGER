@@ -4,10 +4,17 @@ body {
   height: 100%;
   margin: 0;
 }
-
 body {
   display: flex;
   flex-direction: column;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url(/Texturas_Letras/poppins.zip);
+}
+@font-face {
+  font-family: 'Montserrat';
+  src: url(/Texturas_Letras/Montserrat.zip);
 }
 /*Fim do Geral*/
 /*Início do Header*/
@@ -87,21 +94,21 @@ header {
   flex-direction: column;
 }
 .login-form h2 {
-  /*font-family: Poppins; Fonte não existe*/
+  font-family: 'Poppins';
   font-size: 48px;
   color: white;
   text-align: center;
   padding-bottom: 50px;
 }
 .login-form p {
-  /*font-family: Poppins; Fonte não existe*/
+  font-family: 'Poppins';
   font-size: 36px;
   color: white;
   text-align: center;
   padding-bottom: 50px;
 }
 .input-field-text {
-  /*font-family: Montserrat; Fonte não existe*/
+  font-family: 'Montserrat';
   font-size: 28px;
   color: #000000b3;
   padding: 10px;
@@ -113,7 +120,7 @@ header {
   width: 350px;
 }
 .enviar {
-  /*font-family: Poppins; Fonte não existe*/
+  font-family: 'Poppins';
   font-size: 35px;
   border: none;
   border-radius: 34.5px;
