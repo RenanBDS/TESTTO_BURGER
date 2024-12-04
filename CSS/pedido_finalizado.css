@@ -116,7 +116,7 @@ main h4 {
 }
 .quantidade-input {
   border: none;
-  width: 10px;
+  width: 15px;
 }
 .quantidade-input::-webkit-inner-spin-button,
 .quantidade-input::-webkit-outer-spin-button {

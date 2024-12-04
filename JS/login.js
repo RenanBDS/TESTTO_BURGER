@@ -15,6 +15,8 @@ function mensagemEnvio() {
 
   campoUsuario.value = "";
   campoSenha.value = "";
+
+  window.location.href = "index.html";
 }
 
 function voltarParaPagina() {

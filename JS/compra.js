@@ -163,7 +163,6 @@ if (localStorage.getItem("cart")) {
 document.addEventListener("DOMContentLoaded", loadCartItems);
 
 const letras_compras = document.querySelectorAll(".letras_compras");
-
 letras_compras.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.classList.contains("verde")) {
